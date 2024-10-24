@@ -131,7 +131,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-1 text-xs text-gray-500">{{Str::limit('Setiap layanan yang ditawarkan Ebisee, dibuat dengan konsep: 
-                                "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau."', 130)}}</p>
+                                "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau.', 130)}}</p>
                             </div>
                             {{-- rating --}}
                             <p class="text-sm font-medium text-gray-900 ml-5">⭐4.9</p>
