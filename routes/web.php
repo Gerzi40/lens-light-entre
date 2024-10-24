@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/servicesList', function(){
+    return view('servicesList');
+});
+
 
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');

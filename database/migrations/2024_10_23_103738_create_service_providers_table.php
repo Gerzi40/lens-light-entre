@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('whatsapp_number');
             $table->timestamps();
+            // tambain String buat link porto sama path photo services
         });
     }
 
