@@ -18,6 +18,7 @@
           <h2 class="text-4xl font-semibold text-gray-800 mb-6 text-center">Login</h2>
           
           <form action="{{ route('login') }}" method="POST" class="gap-y-10">
+            @csrf
             <div>
               <label for="username" class="block text-sm font-bold text-gray-700">Username</label>
               <input type="text" id="username" name="username" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">

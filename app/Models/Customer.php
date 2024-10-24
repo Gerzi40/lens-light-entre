@@ -2,12 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
-    protected $table = 'customers';
-    protected $fillable = ['username', 'email', 'password', 'dob', 'profile_picture'];
+    use Notifiable;
 
-    protected $hidden = ['password'];
+    protected $table = 'customers';
+
+    protected $fillable = ['username', 'email', 'password', 'dob', 'profiSSle_picture'];
+
+    protected $hidden = ['password', 'remember_token'];
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+        // $this->attributes['password'] = $password;
+    }
 }

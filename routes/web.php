@@ -4,12 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
-Route::get('/', function () {
-    return view('home');
+Route::middleware('auth')->group(function(){
+    Route::get('/', function () {
+        return view('home');
+    });
+    Route::get('/home', function () {
+        return view('home');
+    });
 });
-Route::get('/home', function () {
-    return view('home');
-});
+
+
 
 Route::get('/servicesList', function(){
     return view('servicesList');

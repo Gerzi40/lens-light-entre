@@ -21,9 +21,11 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+            // $request->session()->regenerate();
             return redirect()->intended('home'); 
         }
+
+        \Log::warning('Login failed for user:', ['username' => $credentials['username']]);
 
         return back()->withErrors([
             'username' => 'The provided credentials do not match our records.',
