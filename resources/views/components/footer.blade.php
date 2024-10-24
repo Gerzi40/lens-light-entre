@@ -9,8 +9,8 @@
                     <div class="">
                         <h5 class="text-lg mb-1">Features</h5>
                         <div class="flex flex-col text-sm ">
-                            <a href="#">Home</a>
-                            <a href="#">About Us</a>
+                            <a href="/home">Home</a>
+                            <a href="/aboutus">About Us</a>
                             <a href="#">Privacy Policy</a>
                             <a href="#">FAQ</a>
                         </div>

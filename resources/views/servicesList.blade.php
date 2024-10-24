@@ -54,9 +54,8 @@
 
                 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
                     <div class="group relative">
-                        <div
+                        <div class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
                             {{-- Ini masukin gambar --}}
-                            class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
                             <img src="/Services/Digitally.png" alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
@@ -72,7 +71,7 @@
                                 <p class="mt-1 text-xs text-gray-500">{{Str::limit('We serve as a comprehensive solution for businesses, 
                                 covering a diverse scale that includes Micro, Small, and Medium Enterprises (UMKM), 
                                 local enterprises in the private and public sectors, state-owned corporations, government entities, 
-                                and international as well as multinational companies.', 150)}}</p>
+                                and international as well as multinational companies.', 130)}}</p>
                             </div>
                             {{-- rating --}}
                             <p class="text-sm font-medium text-gray-900 ml-5">⭐4.85</p>
@@ -103,7 +102,7 @@
                                 <p class="mt-1 text-xs text-gray-500">{{Str::limit('We are imaginative visionaries excelling in
                                     captivating visuals via photography and videography with a unique spin on branding
                                     and strategy. We curate a distinctive blend of creative inisghts that aims to make a
-                                    lasting impression', 150)}}</p>
+                                    lasting impression', 130)}}</p>
                             </div>
                             {{-- rating --}}
                             <p class="text-sm font-medium text-gray-900 ml-5">⭐4.8</p>
@@ -132,7 +131,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-1 text-xs text-gray-500">{{Str::limit('Setiap layanan yang ditawarkan Ebisee, dibuat dengan konsep: 
-                                "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau."', 150)}}</p>
+                                "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau."', 130)}}</p>
                             </div>
                             {{-- rating --}}
                             <p class="text-sm font-medium text-gray-900 ml-5">⭐4.9</p>
@@ -163,7 +162,7 @@
                                 <p class="mt-1 text-xs text-gray-500">{{Str::limit('We are imaginative visionaries excelling in
                                     captivating visuals via photography and videography with a unique spin on branding
                                     and strategy. We curate a distinctive blend of creative inisghts that aims to make a
-                                    lasting impression', 150)}}</p>
+                                    lasting impression', 130)}}</p>
                             </div>
                             {{-- rating --}}
                             <p class="text-sm font-medium text-gray-900 ml-5">⭐4.8</p>
