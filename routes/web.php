@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ServiceDetailsController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ServicesListController;
+use App\Http\Controllers\ServiceDetailsController;
 
 Route::get('/', function () {
     return view('home');
@@ -28,6 +29,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/aboutus', function(){
         return view('aboutus');
     })->name('aboutUs');
+    
+    Route::get('/payment/{id}', [PaymentController::class, 'viewPrice'])->name('paymentPage');
 });
 
 Route::view('/payment', 'payment')->name('PaymentPage');

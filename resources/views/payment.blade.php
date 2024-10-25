@@ -58,15 +58,15 @@
                     </div>
                     <div class="flex justify-between font-medium text-[23px] mt-2">
                         <p>Created</p>
-                        <p>2024-10-31 17:41:09</p>
+                        <p id="timeDisplay"></p>
                     </div>
                     <div class="flex justify-between font-medium text-[23px]">
                         <p>Expiry</p>
-                        <p>2024-10-31 22:41:09</p>
+                        <p id="timeDisplay2"></p>
                     </div>
                     <div class="flex justify-between font-semibold text-[23px] mt-2 mb-8">
                         <p>Total</p>
-                        <p class="text-[#65668B]">Rp {{ number_format(session('price'), 2, ',', '.') }}</p>
+                        <p class="text-[#65668B]">Rp {{ number_format($paket->price, 2, ',', '.') }}</p>
                     </div>
                 </div>   
                 <div class="flex flex-row justify-between p-6">
@@ -102,5 +102,41 @@
 
             updateImage();
         });
+        function getCurrentFormattedTime() {
+            const now = new Date();
+        
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const day = String(now.getDate()).padStart(2, '0');
+        
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+        
+        function getCurrentFormattedTimePlusFiveHours() {
+            const now = new Date();
+            now.setHours(now.getHours() + 5); // Add 5 hours to the current time
+        
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+        
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("timeDisplay").innerText = getCurrentFormattedTime();
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("timeDisplay2").innerText = getCurrentFormattedTimePlusFiveHours();
+        });
+  
+  
     </script>
 </x-layout>
