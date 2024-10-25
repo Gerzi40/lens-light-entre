@@ -73,9 +73,11 @@
                     <p class="flex items-center justify-center text-[19px]">PEMBAYARAN DENGAN</p>
                     <img src="{{ asset('Assets/Payment/Dana.png') }}" id="selectedPayment" class="w-[180px] h-[70px]">
                 </div>
-                <form method="POST" class="w-full flex items-center justify-center">
+                <form method="POST" action="{{ route('createtransaction') }}">
                     @csrf
-                    <input type="text" class="hidden" value="{{ session('usedCoupon') }}" name="coupon">
+                    <input type="hidden" name="paket_id" value="{{ $paket->id }}">
+                    <input type="hidden" name="payment_type" id="selectedPaymentType" value="">
+                    <!-- Tombol Bayar -->
                     <button type="submit" class="flex w-[90%] p-2 m-5 items-center justify-center bg-[#223030] hover:bg-[#324343] text-[21px] font-semibold rounded-md text-white">Bayar</button>
                 </form>
             </div>
@@ -83,6 +85,16 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedPaymentInput = document.getElementById('selectedPaymentType');
+            const radioButtons = document.querySelectorAll('input[name="paymentOption"]');
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    selectedPaymentInput.value = radio.getAttribute('data-payment-type');
+                });
+            });
+        });
         var loadFile = function (event) {
             var image = document.getElementById("output");
             image.src = URL.createObjectURL(event.target.files[0]);
