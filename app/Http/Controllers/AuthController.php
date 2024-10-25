@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,12 +17,12 @@ class AuthController extends Controller
 
     public function registerUser(Request $request){
 
-        $request->validate([
-            'username' => 'required|unique:customers,username',
-            'email' => 'required|email|unique:customers,email',
-            'password' => 'required|confirmed|min:8',
-            'dob' => 'required|date',
-        ]);
+        // $request->validate([
+        //     'username' => 'required|min:3|max:50',
+        //     'email' => 'required|regex:/^\S+@\S+\.\S+$/',
+        //     'password' => 'required|min:8',
+        //     'dob' => 'required|date',
+        // ]);
 
         $user = new User();
         $user->username = $request->username;
