@@ -13,4 +13,9 @@ class Package extends Model
     {
         return $this->belongsTo(ServiceProvider::class);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'package_id');
+    }
 }

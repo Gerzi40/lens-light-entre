@@ -19,9 +19,8 @@ Route::middleware('auth')->group(function(){
     
     Route::get('/serviceDetails/{id}', [ServiceDetailsController::class, 'view'])->name('serviceDetails');
     
-    Route::get('/bookingHistory', function(){
-        return view('bookingHistory');
-    })->name('bookingHistory');
+    Route::get('/bookingHistory', [TransactionController::class, 'showTransaction'])->name('bookingHistory');
+
     
     Route::get('/profile', function(){
         return view('profile');
@@ -36,9 +35,11 @@ Route::middleware('auth')->group(function(){
     Route::get('/paymentSuccess', function(){
         return view('paymentSuccess');
     })->name('paymentSuccess');
-
+    Route::post('/paymentSuccess', function(){
+        return view('paymentSuccess');
+    })->name('paymentSuccess');
     // ini buat createTransaction
-    Route::post('/paymentSuccess', [TransactionController::class, 'createTransaction'])->name('createtransaction');
+    Route::post('/payment', [TransactionController::class, 'createTransaction'])->name('createTransaction');
 });
 
 Route::view('/payment', 'payment')->name('PaymentPage');

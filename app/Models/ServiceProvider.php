@@ -16,4 +16,8 @@ class ServiceProvider extends Model
     {
         return $this->hasMany(Package::class);
     }
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'sercive_provider_id');
+    }
 }

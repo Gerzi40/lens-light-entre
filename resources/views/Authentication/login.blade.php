@@ -43,7 +43,7 @@
               <input type="password" id="password" name="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
               @if ($errors->has('password'))
                   <span class="text-danger">
-                      {{$errors->first('email')}}
+                      {{$errors->first('password')}}
                   </span>
               @endif
             </div>

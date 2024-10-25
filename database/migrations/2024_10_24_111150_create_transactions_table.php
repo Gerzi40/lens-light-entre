@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('service_provider_id')->constrained('service_providers')->onDelete('cascade');
-            $table->foreignId('package')->constrained('packages')->onDelete('cascade');
+            $table->foreignId('package_id')->constrained('packages')->onDelete('cascade');
             $table->bigInteger('price');
             $table->string('payment_type'); // QRIS, GOPAY, OVO, etc.
             $table->date('transaction_date');
