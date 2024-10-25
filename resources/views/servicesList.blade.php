@@ -79,9 +79,9 @@
                             {{-- lower --}}
                             <div class="mt-4 flex justify-between">
                                 {{-- Category --}}
-                                <h4 class="font-normal text-sm">Category : {{$service->category}}</h4>
+                                <h4 class="font-normal text-xs">Category : {{$service->category}}</h4>
                                 {{-- Harga --}}
-                                <h3 class="font-normal text-sm">Start from : Rp {{number_format($service->start_from, 0, ',', '.')}}</h3>
+                                <h3 class="font-normal text-xs">Start from : Rp {{number_format($service->start_from, 0, ',', '.')}}</h3>
                             </div>
                         </div>
                     </div>

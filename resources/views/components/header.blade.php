@@ -28,7 +28,7 @@
         </div>
 
         <div class="flex items-center">
-            <a href={{route('profilePage')}} class="mr-3">Hi {{ Auth::user()->username }}</a>
+            <a href={{route('profilePage')}} class="mr-3">Hi, {{ Auth::user()->username }}</a>
             <a href="/profile"><img src="/pp/marvell.png" alt="Orang" class="h-9 mr-6 rounded-3xl"></a>
         </div>
     </div>

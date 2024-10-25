@@ -1,7 +1,7 @@
 <x-layout>
     <div class="flex flex-col items-center gap-6 p-4 justify-center h-screen">
-        <h1 class="text-7xl p-4 bg-[#F3F4F6]">Rate Your Experience</h1>
-        <p class="text-4xl">Order ID : ########</p>
+        <h1 class="text-7xl p-4 bg-[#F3F4F6] font-semibold">Rate Your Experience</h1>
+        <p class="text-4xl">Transaction ID : ########</p>
         <img src="{{asset('Assets/Rating/rating.png')}}" alt="">
         <form class="inline-block relative h-[30px] text-[30px] leading-[30px]">
             <label class="absolute h-full cursor-pointer top-0 left-0 z-[5]">

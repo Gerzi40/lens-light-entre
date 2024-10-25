@@ -85,7 +85,7 @@ class packageSeeder extends Seeder
             'revisions' => 1,
         ]);
         Package::create([
-            'packageName' => 'Video & Video Editting',
+            'packageName' => 'Video & Video Editing',
             'service_provider_id' => 4,
             'description' => "Highlighting your products in the best possible way, we create professional videos that enhance your brand's visual appeal.",
             'price' => 300000,

@@ -64,7 +64,7 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             '"PRODUCT & FASHION PHOTOGRAPHY:
             Layanan produksi terpadu yang mencakup berbagai kebutuhan kreatif dalam satu paket lengkap, mulai dari pencarian dan pengelolaan talenta profesional (model, fotografer, hingga kreator visual), penataan dan styling produk secara estetik dan presisi, layanan makeup artist (MUA) berpengalaman untuk memastikan setiap tampilan sesuai konsep, hingga pembuatan video berkualitas tinggi yang mendukung visual branding secara optimal."',
-            'category' => 'Photo, Video, and Photo & Video editting',
+            'category' => 'Photo, Video, and Editing',
             'start_from' => 100000,
             'email' => 'jasafotoprodukjkt@gmail.com',
             'whatsapp_number' => '+62-812-8590-8800',
@@ -76,7 +76,7 @@ class serviceproviderSeeder extends Seeder
             'name' => 'JasaAnimasi',
             'short_description' => 
             'Sudah berdiri dan berkarya sejak tahun 2015 dan telah berhasil membuat project – project dengan kepuasan pelanggan baik dari dalam negeri hingga mancanegara.',
-            'category' => 'Video Animation & Video Editting',
+            'category' => 'Video Animation & Video Editing',
             'start_from' => 300000,
             'email' => 'jasaanimasi@gmail.com',
             'whatsapp_number' => '+62 812-9919-5289',
@@ -102,7 +102,7 @@ class serviceproviderSeeder extends Seeder
             'name' => 'jasafotojakarta',
             'short_description' => 
             '"Sebagai Food Photographer & Videographer profesional di Jakarta, kami menawarkan layanan lengkap mulai dari pemotretan dan pembuatan video berkualitas tinggi hingga desain buku menu yang menarik, dengan fokus pada setiap detail untuk meningkatkan daya tarik visual dan mendukung branding bisnis kuliner Anda."',
-            'category' => 'Photo & Video Editting',
+            'category' => 'Photo & Video Editing',
             'start_from' => 500000,
             'email' => 'jasafotojakarta@gmail.com',
             'whatsapp_number' => '+62 895-3011-1163',
@@ -115,7 +115,7 @@ class serviceproviderSeeder extends Seeder
             'name' => 'foto.laku',
             'short_description' => 
             'Fokus membantu toko jadi brand lewat foto produk berkualitas. Mulai dari 90rb!🔥#TOKOJADIBRAND.',
-            'category' => 'Photo & Video Editting',
+            'category' => 'Photo & Video Editing',
             'start_from' => 90000,
             'email' => 'foto.laku@gmail.com',
             'whatsapp_number' => '+62 813-2359-5105',
@@ -129,7 +129,7 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             'Jasa Pembuatan Video 3D, Campaign, CGI, dan TVC:
             Kami menyediakan berbagai layanan video kreatif, mulai dari animasi 3D, video campaign, dan efek CGI hingga TVC (Television Commercial). Kami juga ahli dalam pembuatan konten singkat seperti short video, reels Instagram, dan TikTok untuk meningkatkan engagement dan memperkuat branding Anda di berbagai platform digital.',
-            'category' => 'Video Editting',
+            'category' => 'Video Editing',
             'start_from' => 250000,
             'email' => 'videoproduk@gmail.com',
             'whatsapp_number' => '+62 812-9000-8345',

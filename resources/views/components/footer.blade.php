@@ -6,8 +6,8 @@
         <div class="flex flex-col w-3/4"> 
             <div class = "flex h-1/2 mb-2">
                 <div class="flex w-1/3 justify-center items-start">
-                    <div class="">
-                        <h5 class="text-lg mb-1">Features</h5>
+                    <div class="text-[#555252]">
+                        <h5 class="text-lg mb-1 font-bold">Features</h5>
                         <div class="flex flex-col text-sm ">
                             <a href="/home">Home</a>
                             <a href="/aboutus">About Us</a>
@@ -17,17 +17,17 @@
                     </div>
                 </div>
                 <div class="flex w-1/3 justify-center">
-                    <div class="">
-                        <h5 class="text-lg mb-1">Contact Us</h5>
+                    <div class="text-[#555252]">
+                        <h5 class="text-lg mb-1 font-bold">Contact Us</h5>
                         <div class="flex flex-col text-sm ">
-                            <p>Email        : lensandlight26@gmail.com</p>
-                            <p>Phone Number : +62 815 9934 5598</p>
+                            <p><span class="font-semibold">Email</span> : lensandlight26@gmail.com</p>
+                            <p><span class="font-semibold">Phone Number</span>: +62 815 9934 5598</p>
                         </div>
                     </div>
                 </div>
                 <div class="flex w-1/3 justify-center">
-                    <div class="">
-                        <h5 class="text-lg mb-2">Social Media</h5>
+                    <div class="text-[#555252]">
+                        <h5 class="text-lg mb-2 font-bold">Social Media</h5>
                         <div class="flex flex-row text-sm ">
                                 <!-- Face -->
                                 <a href="#" target="_blank" class="w-9 h-9 mr-3 rounded-full border flex justify-center items-center text-white hover:border-blue-950 hover:bg-[#EFEFE9] hover:text-slate-950">
