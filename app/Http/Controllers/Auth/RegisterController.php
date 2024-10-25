@@ -17,12 +17,12 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'username' => 'required|unique:customers,username',
-            'email' => 'required|email|unique:customers,email',
-            'password' => 'required|confirmed|min:8',
-            'dob' => 'required|date',
-        ]);
+        // $request->validate([
+        //     'username' => 'required|unique:customers,username',
+        //     'email' => 'required|email|unique:customers,email',
+        //     'password' => 'required|confirmed|min:8',
+        //     'dob' => 'required|date',
+        // ]);
 
         $customer = Customer::create([
             'username' => $request->username,
@@ -30,9 +30,13 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'dob' => $request->dob,
         ]);
+        
+        if($customer->save()){
+            return redirect()->route('home')->with("susccess", "User created successfully"); 
+        }
 
-        Auth::login($customer);
-
-        return redirect()->route('home'); 
+        // Auth::login($customer);
+        return redirect(route('register'))->with('error', 'Failed to create account');
+        
     }
 }

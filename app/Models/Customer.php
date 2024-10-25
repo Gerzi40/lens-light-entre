@@ -15,9 +15,12 @@ class Customer extends Authenticatable
 
     protected $hidden = ['password', 'remember_token'];
 
+    protected $casts = [
+        'Password' => 'hashed'
+    ];
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
-        // $this->attributes['password'] = $password;
     }
 }

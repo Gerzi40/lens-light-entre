@@ -13,14 +13,12 @@
       <div class="lg:flex md:flex-end w-1/2 h-full">
         <img src="{{ asset('Assets/SignUpBG.png') }}" class="object-cover" alt="SignUp Background">
       </div>
-
       <div class="w-full lg:w-1/2 flex items-center justify-center bg-white">
         <div class="bg-white border rounded-lg p-10 w-full max-w-md">
           <h2 class="text-4xl font-semibold text-gray-800 mb-6 text-center">Register</h2>
           
-          <form action="{{ route('register.store') }}" method="POST" class="space-y-4">
+          <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
             @csrf
-
             <div>
               <label for="username" class="block text-sm font-bold text-gray-700">Username</label>
               <input type="text" id="username" name="username" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
