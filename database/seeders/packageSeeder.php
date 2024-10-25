@@ -33,9 +33,9 @@ class packageSeeder extends Seeder
             'packageName' => 'Video Animasi 3D',
             'service_provider_id' => 1,
             'description' => 'Pembuatan video 3D umumnya membutuhkan waktu lama dan biaya besar. Tapi kami di Ebisee berhasil menemukan metode yang mampu menghasilkan video 3D berkualitas, hanya dalam hitungan hari dengan harga yang lebih murah dibanding lainnya.',
-            'price' => 225000,
-            'duration' => '3 - 5 days',
-            'revisions' => '2'
+            'price' => 325000,
+            'duration' => '7 days',
+            'revisions' => '3'
         ]);
     }
 }

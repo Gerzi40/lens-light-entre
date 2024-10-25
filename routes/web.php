@@ -12,7 +12,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::middleware('auth')->group(function(){
+//Route::middleware('auth')->group(function(){
     Route::get('/servicesList', [ServicesListController::class, 'view'])->name('servicesList');
     
     Route::get('/serviceDetails/{id}', [ServiceDetailsController::class, 'view'])->name('serviceDetails');
@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/aboutus', function(){
         return view('aboutus');
     });
-});
+//});
 
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');

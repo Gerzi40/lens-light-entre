@@ -3,19 +3,24 @@
         <div class="flex justify-between h-96 px-12 gap-10">
             {{-- img --}}
             <div class="w-full ">
-                <img src="/Services/Ebisee.png" alt="digitally"
+                <img src={{$service->link_photo}} alt="digitally"
                 class="h-full w-full object-cover object-center lg:h-96 lg:w-auto">
             </div>
             {{-- short desc --}}
             <div class="flex flex-col w-full justify-center">
-                <h3 class="font-semibold text-3xl mb-4">Ebisee</h3>
+                <h3 class="font-semibold text-3xl mb-4">{{$service->name}}</h3>
                 <p class="text-lg font-base">
-                    Setiap layanan yang ditawarkan Ebisee, dibuat dengan konsep: 
-                    "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau.
-                    Ebisee tidak pernah berhenti berinovasi dengan selalu mengikuti trend terkini, 
-                    teknologi terbaru dan menggunakannya demi memberikan hasil terbaik kepada klien kami.
+                    {{$service->short_description}}
                 </p>
-                <h4>⭐4.9</h4>
+                <h4>⭐{{$service->rating}}</h4>
+                <div class="mt-6">
+                  <a href= '{{$service->link_porto}}' target="blank"
+                  class="relative inline-block text-2xl font-semibold text-black transition duration-300 ease-in-out 
+                  before:absolute before:-bottom-1 before:left-0 before:h-[2px] before:w-full before:scale-x-0 
+                before:bg-black before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+                  Portofolio
+                </a>
+              </div>
             </div>
         </div>
     </section>
@@ -30,43 +35,25 @@
                 </div>
                 {{-- <p class="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p> --}}
                 <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-7xl lg:grid-cols-3">
+                  @foreach ($packages as $package)
                   <div class="flex flex-col justify-between mx-5 h-full rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
                     <div>
-                        <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-indigo-400">Video Youtube, Instagram</h3>
+                        <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-indigo-400">{{$package->packageName}}</h3>
                         <p class="mt-4 flex items-baseline gap-x-2">
                           <span class="text-2xl font-semibold tracking-tight text-white">
-                            Rp. 225.000
+                            Rp {{number_format($package->price, 0, ',', '.')}}
                           </span>
                         </p>
-                        <p class="mt-6 text-base leading-7 text-gray-300">Anda bisa menggunakan untuk berbagai tujuan, mulai dari video iklan Youtube, Facebook, Instagram ataupun untuk mempromosikan suatu produk serta jasa di website Anda sendiri.</p>
+                        <p class="mt-6 text-base leading-7 text-gray-300">{{$package->description}}</p>
+                        
                     </div>
-                    <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
-                  </div>
-                  <div class="mx-5 h-full rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 flex flex-col justify-between">
                     <div>
-                      <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-indigo-400">Video Animasi 2D</h3>
-                      <p class="mt-4 flex items-baseline gap-x-2">
-                        <span class="text-2xl font-semibold tracking-tight text-white">Rp. 225.000</span>
-                      </p>
-                      <p class="mt-6 text-base leading-7 text-gray-300">Video animasi 2D biasanya digunakan sebagai explainer video, yaitu video animasi yang menjelaskan suatu produk atau jasa.</p>
+                      <h2 class="mt-2 text-lg text-slate-200">Working Duration  : {{$package->duration}}</h2>
+                      <h3 class="mt-2 text-lg text-slate-200">Revision : {{$package->revisions}}</h3>
+                      <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
                     </div>
-                  
-                    <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
                   </div>
-                  
-                  <div class="mx-5 h-full rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
-                    <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-indigo-400">Video Animasi 3D</h3>
-                    <p class="mt-4 flex items-baseline gap-x-2">
-                      <span class="text-2xl font-semibold tracking-tight text-white">Rp. 325.000</span>
-                      {{-- <span class="text-base text-gray-400">/month</span> --}}
-                    </p>
-                    <p class="mt-6 text-base leading-7 text-gray-300">
-                        Pembuatan video 3D umumnya membutuhkan waktu lama dan biaya besar.
-                        Tapi kami di Ebisee berhasil menemukan metode yang mampu menghasilkan video 3D berkualitas, 
-                        hanya dalam hitungan hari dengan harga yang lebih murah dibanding lainnya.
-                    </p>
-                    <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
-                  </div>
+                  @endforeach
                 </div>
               </div>
         </div>

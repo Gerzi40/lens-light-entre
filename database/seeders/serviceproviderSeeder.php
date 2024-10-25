@@ -24,7 +24,7 @@ class serviceproviderSeeder extends Seeder
             'start_from' => 150000,
             'email' => 'ebisee@gmail.com',
             'whatsapp_number' => '+6288998236445',
-            'link_porto' => '',
+            'link_porto' => 'https://drive.google.com/drive/folders/1fCAP4KYy5sphlplYcInrSHGhjgDagDr4?usp=sharing',
             'link_photo' => '/Services/Ebisee.png'
         ]);
         ServiceProvider::create([

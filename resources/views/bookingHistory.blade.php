@@ -11,7 +11,10 @@
                         Date
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Category
+                        Package
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Company
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Price
@@ -33,6 +36,9 @@
                         Laptop
                     </td>
                     <td class="px-6 py-4">
+                        ABC
+                    </td>
+                    <td class="px-6 py-4">
                         $2999
                     </td>
                     <td class="px-6 py-4">
@@ -50,7 +56,10 @@
                         Laptop PC
                     </td>
                     <td class="px-6 py-4">
-                        $1999
+                        ABC
+                    </td>
+                    <td class="px-6 py-4">
+                        $299
                     </td>
                     <td class="px-6 py-4">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
@@ -67,7 +76,10 @@
                         Accessories
                     </td>
                     <td class="px-6 py-4">
-                        $99
+                        ABC
+                    </td>
+                    <td class="px-6 py-4">
+                        $190
                     </td>
                     <td class="px-6 py-4">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
@@ -82,6 +94,9 @@
                     </td>
                     <td class="px-6 py-4">
                         Phone
+                    </td>
+                    <td class="px-6 py-4">
+                        ABC
                     </td>
                     <td class="px-6 py-4">
                         $799
@@ -99,6 +114,9 @@
                     </td>
                     <td class="px-6 py-4">
                         Wearables
+                    </td>
+                    <td class="px-6 py-4">
+                        ABC
                     </td>
                     <td class="px-6 py-4">
                         $999
