@@ -1,4 +1,4 @@
-<footer class="bg-[#BBA58F] pt-4">
+<footer class="bg-[#BBA58F] pt-10">
     <div class="flex flex-wrap h-48">
         <div class="flex w-1/4 items-center justify-center">
             <a href="#" ><img src="/logo/logolens&lightnewbg.png" alt="OurLogo" class="h-24 w-30 mr-3"></a>

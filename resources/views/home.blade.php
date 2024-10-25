@@ -1,4 +1,14 @@
-<x-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    @vite(['resources/css/app.css','resources/js/app.js'])
+</head>
+<body>
+    <x-headerBefore></x-headerBefore>
     <section class="pt-36 pb-32 px-20 bg-[#EFEFE9]">
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/2 pl-5">
@@ -6,13 +16,17 @@
                 <p class="text-lg font-semibold text-slate-600 lg:text-lg mb-12">Join millions of content creators out
                     there and stand out by being uniquely you.</p>
                 <div class="flex flex-row">
-                    <button
-                        class="py-5 px-10 bg-[#223030] flex flex-row text-slate-100 font-medium items-center rounded-lg ml-5 mr-5 shadow-xl hover:bg-white hover:text-[#223030] transition duration-300 ease-in-out"><img
-                            src="/logo/feather-removebg-preview 1.png" alt="feather" class="mr-2 hover:text-black">EXPLORE
-                        ABOUT US</button>
-                    <button
-                        class="py-5 px-20 bg-white text-slate-950 font-medium items-center rounded-lg ml-5 shadow-xl hover:bg-[#223030] hover:text-white transition duration-300 ease-in-out">ENTER
-                        ACCOUNT</button>
+                    <a href="/register">
+                        <button
+                            class="py-5 px-10 bg-[#223030] flex flex-row text-slate-100 font-medium items-center rounded-lg ml-5 mr-5 shadow-xl hover:bg-white hover:text-[#223030] transition duration-300 ease-in-out"><img
+                                src="/logo/feather-removebg-preview 1.png" alt="feather" class="mr-2 hover:text-black">EXPLORE
+                            ABOUT US</button>
+                    </a>
+                    <a href="/login">
+                        <button
+                            class="py-6 px-20 bg-white text-slate-950 font-medium items-center rounded-lg ml-5 shadow-xl hover:bg-[#223030] hover:text-white transition duration-300 ease-in-out">ENTER
+                            ACCOUNT</button>
+                    </a>
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2 ">
@@ -96,18 +110,18 @@
             </div>
             <div class="flex w-2/3 items-center">
                 <div>
-                    <h2>IYKYK.</h2>
-                    <h4>what if you don't know?</h4>
-                    <p>Lens&Light connects editors with those seeking editing services that wants to elevate the quality of
+                    <h2 class="text-7xl font-extrabold mb-2">IYKYK.</h2>
+                    <h4 class="text-3xl font-semibold  mb-8">what if you don't know?</h4>
+                    <p class="text-lg font-base mb-6">Lens&Light connects editors with those seeking editing services that wants to elevate the quality of
                         their work. Editors come from guaranteed backgrounds and have a wealth of experience in the world of
                         content creating.
                     </p>
-                    <h4>Highly requested videos/photos on :</h4>
-                    <div class="flex flex-row">
-                        <img src="/Assets/youtube.png" alt="">
-                        <img src="/Assets/youtube.png" alt="">
-                        <img src="/Assets/youtube.png" alt="">
-                        <img src="/Assets/youtube.png" alt="">
+                    <h4 class="text-xl font-semibold">Highly requested videos/photos on :</h4>
+                    <div class="flex flex-row mt-4">
+                        <img src="/Assets/ig.png" alt="" >
+                        <img src="/Assets/youtube.png" alt="" class="w-40">
+                        <img src="/Assets/tiktok.png" alt="" class="w-40">
+                        <img src="/Assets/twitter.png" alt="" class="w-44">
                     </div>
                 </div>
             </div>
@@ -118,4 +132,6 @@
             <img src="/Assets/groupapalah.png" alt="">
         </div>
     </section>
-</x-layout>
+    <x-footer></x-footer>
+</body>
+</html>
