@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ServiceDetailsController;
+use App\Http\Controllers\ServicesListController;
 
 Route::get('/', function () {
     return view('home');
@@ -11,13 +13,9 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::middleware('auth')->group(function(){
-    Route::get('/servicesList', function(){
-        return view('servicesList');
-    });
+    Route::get('/servicesList', [ServicesListController::class, 'view'])->name('servicesList');
     
-    Route::get('/serviceDetails', function(){
-        return view('serviceDetails');
-    });
+    Route::get('/serviceDetails/{id}', [ServiceDetailsController::class, 'view'])->name('serviceDetails');
     
     Route::get('/bookingHistory', function(){
         return view('bookingHistory');

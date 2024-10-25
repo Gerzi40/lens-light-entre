@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('service_provider_id')->constrained('service_providers')->onDelete('cascade');
-            $table->string('description');
-            $table->decimal('price', 8, 2);
+            $table->string('packageName');
+            $table->text('description');
+            $table->bigInteger('price');
             $table->string('duration');
             $table->integer('revisions');
             $table->timestamps();

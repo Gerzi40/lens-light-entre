@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('service_providers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('short_description');
+            $table->text('short_description');
             $table->string('category');
-            $table->string('requirement'); // ini apus aja
+            // $table->string('requirement'); // ini apus aja
             $table->decimal('rating', 2, 1)->default(0.0);
+            $table->bigInteger('start_from');
             $table->string('email')->unique();
             $table->string('whatsapp_number');
+            $table->string('link_porto');
+            $table->string('link_photo');
             $table->timestamps();
             // tambain String buat link porto sama path photo services
         });

@@ -53,127 +53,39 @@
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">Services</h2>
 
                 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
+                    @foreach ($lists as $service)
                     <div class="group relative">
                         <div class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
                             {{-- Ini masukin gambar --}}
-                            <img src="/Services/Digitally.png" alt="Front of men&#039;s Basic Tee in black."
+                            <img src={{$service->link_photo}} alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                {{-- ini judul, short desc --}}
-                                <h3 class="text-base font-bold text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Digitally
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-xs text-gray-500">{{Str::limit('We serve as a comprehensive solution for businesses, 
-                                covering a diverse scale that includes Micro, Small, and Medium Enterprises (UMKM), 
-                                local enterprises in the private and public sectors, state-owned corporations, government entities, 
-                                and international as well as multinational companies.', 130)}}</p>
+                        <div class="flex flex-col justify-between">
+                            {{-- upper --}}
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    {{-- ini judul, short desc --}}
+                                    <h3 class="text-base font-bold text-gray-700">
+                                        <a href="{{url('/serviceDetails/' . $service->id)}}">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            {{$service->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-xs text-gray-500">{{Str::limit($service->short_description, 150)}}</p>
+                                </div>
+                                {{-- rating --}}
+                                <p class="text-sm font-medium text-gray-900 ml-5">⭐{{$service->rating}}</p>
                             </div>
-                            {{-- rating --}}
-                            <p class="text-sm font-medium text-gray-900 ml-5">⭐4.85</p>
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            {{-- Category --}}
-                            <h4 class="font-normal text-sm">Category : Photo and Video</h4>
-                            {{-- Harga --}}
-                            <h3 class="font-normal text-sm">Start from : Rp.500.000</h3>
+                            {{-- lower --}}
+                            <div class="mt-4 flex justify-between">
+                                {{-- Category --}}
+                                <h4 class="font-normal text-sm">Category : {{$service->category}}</h4>
+                                {{-- Harga --}}
+                                <h3 class="font-normal text-sm">Start from : Rp {{number_format($service->start_from, 0, ',', '.')}}</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="group relative">
-                        <div
-                            {{-- Ini masukin gambar --}}
-                            class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
-                            <img src="/Services/Reka.png" alt="Front of men&#039;s Basic Tee in black."
-                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                {{-- ini judul, short desc --}}
-                                <h3 class="text-base font-bold text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        REKA
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-xs text-gray-500">{{Str::limit('We are imaginative visionaries excelling in
-                                    captivating visuals via photography and videography with a unique spin on branding
-                                    and strategy. We curate a distinctive blend of creative inisghts that aims to make a
-                                    lasting impression', 130)}}</p>
-                            </div>
-                            {{-- rating --}}
-                            <p class="text-sm font-medium text-gray-900 ml-5">⭐4.8</p>
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            {{-- Category --}}
-                            <h4 class="font-normal text-sm">Category : Photo and Video</h4>
-                            {{-- Harga --}}
-                            <h3 class="font-normal text-sm">Start from : Rp.250.000</h3>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <div
-                            {{-- Ini masukin gambar --}}
-                            class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
-                            <img src="/Services/Ebisee.png" alt="Front of men&#039;s Basic Tee in black."
-                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                {{-- ini judul, short desc --}}
-                                <h3 class="text-base font-bold text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Ebisee
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-xs text-gray-500">{{Str::limit('Setiap layanan yang ditawarkan Ebisee, dibuat dengan konsep: 
-                                "Jasa yang memberikan manfaat sebesar mungkin kepada klien, dengan harga yang terjangkau.', 130)}}</p>
-                            </div>
-                            {{-- rating --}}
-                            <p class="text-sm font-medium text-gray-900 ml-5">⭐4.9</p>
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            {{-- Category --}}
-                            <h4 class="font-normal text-sm">Category : Video dan Video Editing</h4>
-                            {{-- Harga --}}
-                            <h3 class="font-normal text-sm">Start from : Rp. 150.000</h3>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <div
-                            {{-- Ini masukin gambar --}}
-                            class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
-                            <img src="/Services/Reka.png" alt="Front of men&#039;s Basic Tee in black."
-                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                {{-- ini judul, short desc --}}
-                                <h3 class="text-base font-bold text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        REKA
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-xs text-gray-500">{{Str::limit('We are imaginative visionaries excelling in
-                                    captivating visuals via photography and videography with a unique spin on branding
-                                    and strategy. We curate a distinctive blend of creative inisghts that aims to make a
-                                    lasting impression', 130)}}</p>
-                            </div>
-                            {{-- rating --}}
-                            <p class="text-sm font-medium text-gray-900 ml-5">⭐4.8</p>
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            {{-- Category --}}
-                            <h4 class="font-normal text-sm">Category : Photo and Video</h4>
-                            {{-- Harga --}}
-                            <h3 class="font-normal text-sm">Start from : Rp.250.000</h3>
-                        </div>
-                    </div>
+                    @endforeach
                     <!-- More products... -->
                 </div>
             </div>
