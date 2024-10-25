@@ -19,15 +19,15 @@ Route::middleware('auth')->group(function(){
     
     Route::get('/bookingHistory', function(){
         return view('bookingHistory');
-    });
+    })->name('bookingHistory');
     
     Route::get('/profile', function(){
         return view('profile');
-    });
+    })->name('profilePage');
     
     Route::get('/aboutus', function(){
         return view('aboutus');
-    });
+    })->name('aboutUs');
 });
 
 Route::view('/payment', 'payment')->name('PaymentPage');

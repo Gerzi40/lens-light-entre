@@ -25,7 +25,7 @@
         <div class="w-full flex items-center justify-center bg-white">
             <div class="bg-white p-10 w-full max-w-md">
             
-            <form action="{{ route('register.store') }}" method="POST" class="space-y-4">
+            <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
                 @csrf
 
                 <div>
