@@ -42,10 +42,10 @@
                                     {{$transaction->transaction_date}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{$transaction->package}} 
+                                    {{$transaction->package->packageName}} 
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{$transaction->service_provider_id}}
+                                    {{$transaction->serviceProvider->name}}
                                 </td>
                                 <td class="px-6 py-4">
                                     Rp {{ number_format($transaction->price, 2, ',', '.') }}

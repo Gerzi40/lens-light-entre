@@ -35,9 +35,9 @@
                 </div>
                 <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-centergap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-7xl lg:grid-cols-3">
                   @foreach ($packages as $package)
-                  <div class="flex flex-col justify-between mx-5 h-full rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
+                  <div class="flex flex-col justify-between mx-5 h-full rounded-3xl bg-[#223030] p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
                     <div>
-                        <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-indigo-400">{{$package->packageName}}</h3>
+                        <h3 id="tier-enterprise" class="text-base font-semibold leading-7 text-[#d5f4f4]">{{$package->packageName}}</h3>
                         <p class="mt-4 flex items-baseline gap-x-2">
                           <span class="text-2xl font-semibold tracking-tight text-white">
                             Rp {{number_format($package->price, 0, ',', '.')}}
@@ -45,11 +45,11 @@
                         </p>
                         <p class="mt-6 text-base leading-7 text-gray-300">{{$package->description}}</p>
                         
-                    </div>
+                    </div>  
                     <div>
                       <h2 class="mt-2 text-lg text-slate-200">Working Duration  : {{$package->duration}}</h2>
                       <h3 class="mt-2 text-lg text-slate-200">Revision : {{$package->revisions}}</h3>
-                      <a href="{{url('/payment/' . $package->id)}}" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Order Now</a>
+                      <a href="{{url('/payment/' . $package->id)}}" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-[#2caaaa] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Order Now</a>
                     </div>
                   </div>
                   @endforeach

@@ -28,10 +28,12 @@ class TransactionController extends Controller
 
     public function showTransaction()
     {
+        $user = Auth::user();
+
         $transactions = Transaction::with(['package', 'serviceProvider']) 
-            ->where('user_id', auth()->id())
-            ->get();
-        dd($transactions);
+            ->where('user_id', $user->id)
+            ->get();    
+        // dd($transactions);
         return view('bookingHistory', compact('transactions'));
     }
 }
