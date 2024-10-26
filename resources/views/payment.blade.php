@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex flex-row gap-8 bg-[#EFEFE9] h-screen px-20">
+    <div class="flex flex-row gap-8 bg-[#EFEFE9] px-20 py-20">
         <div class="w-1/2">
             <p class="font-semibold text-2xl my-8">Choose Payment Method</p>
             <div class="p-8 mb-8 bg-[#E8D9CD]">

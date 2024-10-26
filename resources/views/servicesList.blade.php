@@ -1,5 +1,5 @@
 <x-layout>
-    <section id="searchbar" class="pt-12">
+    <section id="searchbar" class="pt-32">
         <form class="max-w-lg mx-auto">
             <div class="flex">
                 <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your

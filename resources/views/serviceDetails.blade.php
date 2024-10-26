@@ -1,5 +1,5 @@
 <x-layout>
-    <section id="sect1" class="pt-10 pb-10">
+    <section id="sect1" class="pt-32 pb-10">
         <div class="flex justify-between h-96 px-12 gap-10">
             {{-- img --}}
             <div class="w-full ">

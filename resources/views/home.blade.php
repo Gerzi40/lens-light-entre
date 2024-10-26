@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="pt-36 pb-32 px-20 bg-[#EFEFE9]">
+    <section class="pt-44 pb-32 px-20 bg-[#EFEFE9]">
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/2 pl-5">
                 <h2 class="font-bold text-5xl mb-8 lg:text-7xl">Quality sets creators apart.</h2>

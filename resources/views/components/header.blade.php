@@ -3,7 +3,7 @@
 @endphp
 
 @auth
-<header class="bg-[#EFEFE9] bg-transparent top-0 left-0 w-full z-10">
+<header class="bg-transparent absolute top-0 left-0 w-full z-10">
     <div class="flex justify-between h-30">
         <div class="flex items-center">
             <a href="/"><img src="/logo/logolens&lightnewbg.png" alt="OurLogo" class="h-20 w-30 mr-3"></a>
@@ -34,7 +34,7 @@
     </div>
 </header>
 @else
-<header class="bg-[#EFEFE9] bg-transparent top-0 left-0 w-full z-10">
+<header class="bg-transparent absolute top-0 left-0 w-full z-10">
     <div class="flex justify-between h-30">
         <div class="flex items-center">
             <a href="/"><img src="/logo/logolens&lightnewbg.png" alt="OurLogo" class="h-20 w-30 mr-3"></a>
