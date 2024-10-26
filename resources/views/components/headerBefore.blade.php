@@ -1,4 +1,4 @@
-<header class="bg-slate-100">
+<header class="bg-slate-100 bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
     <div class="flex justify-between h-30 ">
         <div class="flex items-center">
             <a href="/"><img src="/logo/logolens&lightnewbg.png" alt="OurLogo" class="h-20 w-30 mr-3"></a>
