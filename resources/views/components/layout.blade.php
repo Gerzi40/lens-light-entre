@@ -8,7 +8,7 @@
     {{-- @vite('resources/css/app.css') --}}
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body>
+<body class="scroll-smooth">
     <x-header></x-header>
     {{$slot}}
     <x-footer></x-footer>

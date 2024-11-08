@@ -26,10 +26,6 @@ Route::middleware('auth')->group(function(){
         return view('profile');
     })->name('profilePage');
     
-    Route::get('/aboutus', function(){
-        return view('aboutus');
-    })->name('aboutUs');
-    
     Route::get('/payment/{id}', [PaymentController::class, 'viewPrice'])->name('paymentPage');
 
     Route::get('/paymentSuccess', function(){
@@ -38,13 +34,16 @@ Route::middleware('auth')->group(function(){
     Route::post('/paymentSuccess', function(){
         return view('paymentSuccess');
     })->name('paymentSuccess');
-    // ini buat createTransaction
+
     Route::post('/payment', [TransactionController::class, 'createTransaction'])->name('createTransaction');
+
+    Route::view('/payment', 'payment')->name('PaymentPage');
+    Route::view('/rating', 'rating')->name('RatingPage');
 });
 
-Route::view('/payment', 'payment')->name('PaymentPage');
-Route::view('/rating', 'rating')->name('RatingPage');
-
+Route::get('/aboutus', function(){
+    return view('aboutus');
+})->name('aboutUs');
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'registerUser'])->name('register.submit');
