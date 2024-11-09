@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('payment_type'); // QRIS, GOPAY, OVO, etc.
             $table->date('transaction_date');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

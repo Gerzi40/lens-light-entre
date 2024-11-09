@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('short_description');
-            $table->string('category');
-            // $table->string('requirement'); // ini apus aja
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->decimal('rating', 3, 2)->default(0.0);
             $table->bigInteger('start_from');
             $table->string('email')->unique();
@@ -24,7 +23,6 @@ return new class extends Migration
             $table->string('link_porto');
             $table->string('link_photo');
             $table->timestamps();
-            // tambain String buat link porto sama path photo services
         });
     }
 

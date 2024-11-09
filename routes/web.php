@@ -15,35 +15,31 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::middleware('auth')->group(function(){
+
     Route::get('/servicesList', [ServicesListController::class, 'view'])->name('servicesList');
+
+    //Route::post('/servicesList', [ServicesListController::class, 'search'])->name('servicesListSearch');
     
     Route::get('/serviceDetails/{id}', [ServiceDetailsController::class, 'view'])->name('serviceDetails');
     
     Route::get('/bookingHistory', [TransactionController::class, 'showTransaction'])->name('bookingHistory');
 
-    
-    Route::get('/profile', function(){
-        return view('profile');
-    })->name('profilePage');
+    Route::get('/profile', function(){ return view('profile');})->name('profilePage');
     
     Route::get('/payment/{id}', [PaymentController::class, 'viewPrice'])->name('paymentPage');
 
-    Route::get('/paymentSuccess', function(){
-        return view('paymentSuccess');
-    })->name('paymentSuccess');
-    Route::post('/paymentSuccess', function(){
-        return view('paymentSuccess');
-    })->name('paymentSuccess');
+    Route::get('/paymentSuccess', function(){ return view('paymentSuccess');})->name('paymentSuccess');
+
+    Route::post('/paymentSuccess', function(){ return view('paymentSuccess');})->name('paymentSuccess');
 
     Route::post('/payment', [TransactionController::class, 'createTransaction'])->name('createTransaction');
 
     Route::view('/payment', 'payment')->name('PaymentPage');
+
     Route::view('/rating', 'rating')->name('RatingPage');
 });
 
-Route::get('/aboutus', function(){
-    return view('aboutus');
-})->name('aboutUs');
+Route::get('/aboutus', function(){ return view('aboutus');})->name('aboutUs');
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'registerUser'])->name('register.submit');

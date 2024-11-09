@@ -12,12 +12,16 @@ class ServiceProvider extends Model
         'rating', 'email', 'whatsapp_number', 'link_porto', 'link_photo'
     ];
 
-    public function packages()
+    public function package()
     {
         return $this->hasMany(Package::class);
     }
-    public function transactions()
+    public function transaction()
     {
         return $this->hasMany(Transaction::class, 'sercive_provider_id');
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

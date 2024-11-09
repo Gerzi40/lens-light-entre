@@ -1,37 +1,18 @@
 <x-layout>
     <section id="searchbar" class="pt-32">
-        <form class="max-w-lg mx-auto">
+        <form action="/servicesList" class="max-w-lg mx-auto" id="form">
             <div class="flex">
-                <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your
-                    Email</label>
-                <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                    class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-                    type="button">All categories <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 4 4 4-4" />
-                    </svg></button>
-                <div id="dropdown"
-                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                        <li>
-                            <button type="button"
-                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Videos</button>
-                        </li>
-                        <li>
-                            <button type="button"
-                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Photos</button>
-                        </li>
-                        {{-- <li>
-                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
-                    </li>
-                    <li>
-                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
-                    </li> --}}
-                    </ul>
-                </div>
+                <select name="category" onchange="document.getElementById('form').submit()" name="category">
+                    <option value="">
+                        All categories
+                    </option>
+                    @foreach ($categories as $category)  
+                            <option value="{{$category->id}}" {{ request('category') == $category->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$category->name}}</button>
+                    @endforeach
+                </select>
+
                 <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
+                    <input type="search" id="search-dropdown" name="service_name"
                         class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                         placeholder="Search services ..." required />
                     <button type="submit"
@@ -79,7 +60,7 @@
                             {{-- lower --}}
                             <div class="mt-4 flex justify-between">
                                 {{-- Category --}}
-                                <h4 class="font-normal text-xs">Category : {{$service->category}}</h4>
+                                <h4 class="font-normal text-xs">Category : {{$service->category->name}}</h4>
                                 {{-- Harga --}}
                                 <h3 class="font-normal text-xs">Start from : Rp {{number_format($service->start_from, 0, ',', '.')}}</h3>
                             </div>
@@ -91,4 +72,14 @@
             </div>
         </div>
     </section>
+    <script>
+        // function selectCategory(category) {
+        //     document.getElementById('categoryInput').value = category;
+        // }
+        // console.log(document.getElementById('categoryInput'));
+        function selectCategory(category) {
+        document.getElementById('categoryInput').value = category;
+        document.querySelector('form').submit();
+        }
+    </script>
 </x-layout>
