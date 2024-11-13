@@ -51,7 +51,7 @@
                                     Rp {{ number_format($transaction->price, 2, ',', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="/rating" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Rate</a>
+                                    <a href="/rating/{{$transaction->id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Rate</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -1,9 +1,9 @@
 <x-layout>
     <div class="flex flex-col items-center gap-6 p-4 justify-center h-screen pt-16">
         <h1 class="text-7xl p-4 bg-[#F3F4F6] font-semibold">Rate Your Experience</h1>
-        <p class="text-4xl">Transaction ID : ########</p>
+        <p class="text-4xl">Transaction ID : {{$transaction->id}}</p>
         <img src="{{asset('Assets/Rating/rating.png')}}" alt="">
-        <form class="inline-block relative h-[30px] text-[30px] leading-[30px]">
+        <form class="inline-block relative h-[30px] text-[30px] leading-[30px]" id="form">
             <label class="absolute h-full cursor-pointer top-0 left-0 z-[5]">
               <input type="radio" name="stars" class="absolute opacity-0" value="1" />
               <span class="float-left text-transparent"><svg class="w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,9 @@
               </svg></span>
             </label>
         </form>
-        <button type="submit" class="flex p-2 w-1/3 m-5 items-center justify-center bg-[#61A0FF] hover:bg-[#85b6ff] text-4xl font-semibold rounded-md text-white">Submit</button>
+        <a href="/bookingHistory">
+          <button type="submit" class="flex p-2 w-1/3 m-5 items-center justify-center bg-[#61A0FF] hover:bg-[#85b6ff] text-4xl font-semibold rounded-md text-white">Submit</button>
+        </a>  
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

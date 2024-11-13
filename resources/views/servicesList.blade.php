@@ -1,22 +1,22 @@
 <x-layout>
     <section id="searchbar" class="pt-32">
-        <form action="/servicesList" class="max-w-lg mx-auto" id="form">
+        <form action="/servicesList" method="GET" class="max-w-lg mx-auto" id="form" style="border-width:1px; border-radius: 5px; border-color: gray;">
             <div class="flex">
-                <select name="category" onchange="document.getElementById('form').submit()" name="category">
+                <select name="category" onchange="document.getElementById('form').submit()" name="category" style="border: none;" class="bg-gray-50" style="border-radius: 4px">
                     <option value="">
                         All categories
                     </option>
                     @foreach ($categories as $category)  
-                            <option value="{{$category->id}}" {{ request('category') == $category->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$category->name}}</button>
+                            <option value="{{$category->id}}" {{ request('category') == $category->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2">{{$category->name}}</button>
                     @endforeach
                 </select>
 
                 <div class="relative w-full">
                     <input type="search" id="search-dropdown" name="service_name"
-                        class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                        class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                         placeholder="Search services ..." required />
                     <button type="submit"
-                        class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-[#223030] rounded-e-lg border border-[#223030] hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-[#223030] border border-[#223030] hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 4px">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

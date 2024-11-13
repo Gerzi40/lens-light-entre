@@ -34,9 +34,10 @@ Route::middleware('auth')->group(function(){
 
     Route::post('/payment', [TransactionController::class, 'createTransaction'])->name('createTransaction');
 
-    Route::view('/payment', 'payment')->name('PaymentPage');
+    Route::get('/rating/{id}', [TransactionController::class, 'idAtRating'])->name('RatingPage');
 
-    Route::view('/rating', 'rating')->name('RatingPage');
+    Route::view('/payment', 'payment')->name('PaymentPage');
+    
 });
 
 Route::get('/aboutus', function(){ return view('aboutus');})->name('aboutUs');

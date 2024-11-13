@@ -36,4 +36,11 @@ class TransactionController extends Controller
         // dd($transactions);
         return view('bookingHistory', compact('transactions'));
     }
+
+    public function idAtRating($id){
+        $transaction = Transaction::findorfail($id);
+        //dd($transaction);
+        return view('rating', compact('transaction'));
+    }
+
 }
