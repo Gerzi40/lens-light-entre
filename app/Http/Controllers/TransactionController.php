@@ -45,19 +45,33 @@ class TransactionController extends Controller
     }
 
     public function updateRating(Request $request, $transaction_id){
-        $input = $request->stars;
 
-        // cari current transaction untuk bisa liat serviceProvider_id
-        $currentTransaction = Transaction::findorfail($transaction_id);
-        dd($currentTransaction);
+        $request->validate([
+            'stars' => 'required|integer|between:1,5',
+        ]);
 
-        // cari service provider based on transaction->service_provider_id
-        $serviceProvider = ServiceProvider::findorfail($currentTransaction->service_provider_id);
+        $transaction = Transaction::findOrFail($transaction_id);
+        $serviceProvider = ServiceProvider::findorfail($transaction->service_provider_id);
+        
+        $currentRating = $serviceProvider->rating;
 
         // pengen itung udah brp kali transaksi pernah dilakukan dengan service tersebut
+        
+         $previousRatingsCount = Transaction::where('service_provider_id', $serviceProvider->id)
+         ->whereNotNull('rating')  
+         ->count();
 
+         $newRating = $request->input('stars');
 
+         if ($previousRatingsCount > 0) {
+            $newAverageRating = (($currentRating * $previousRatingsCount) + $newRating) / ($previousRatingsCount + 1);
+        } else {
+            $newAverageRating = $newRating;
+        }
 
+        $serviceProvider->rating = $newAverageRating;
+        $serviceProvider->ratings_count = $previousRatingsCount + 1; 
+        $serviceProvider->save();
 
 
         return redirect()->route('bookingHistory')->with('success', 'Rating updated successfully!');

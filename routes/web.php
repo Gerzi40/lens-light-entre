@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/bookingHistory/{id}', [TransactionController::class, 'idAtRating'])->name('RatingPage');
 
-    Route::get('/bookingHistory/{transaction_id}/updateRating', [TransactionController::class, 'updateRating'])->name('updateRating');
+    Route::POST('/bookingHistory/{transaction_id}', [TransactionController::class, 'updateRating'])->name('updateRating');
 
     Route::view('/payment', 'payment')->name('PaymentPage');
     
