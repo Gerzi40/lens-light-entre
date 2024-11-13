@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\ServiceProvider;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,25 @@ class TransactionController extends Controller
         $transaction = Transaction::findorfail($id);
         //dd($transaction);
         return view('rating', compact('transaction'));
+    }
+
+    public function updateRating(Request $request, $transaction_id){
+        $input = $request->stars;
+
+        // cari current transaction untuk bisa liat serviceProvider_id
+        $currentTransaction = Transaction::findorfail($transaction_id);
+        dd($currentTransaction);
+
+        // cari service provider based on transaction->service_provider_id
+        $serviceProvider = ServiceProvider::findorfail($currentTransaction->service_provider_id);
+
+        // pengen itung udah brp kali transaksi pernah dilakukan dengan service tersebut
+
+
+
+
+
+        return redirect()->route('bookingHistory')->with('success', 'Rating updated successfully!');
     }
 
 }
