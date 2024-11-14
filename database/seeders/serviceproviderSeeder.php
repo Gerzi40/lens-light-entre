@@ -23,6 +23,7 @@ class serviceproviderSeeder extends Seeder
             teknologi terbaru dan menggunakannya demi memberikan hasil terbaik kepada klien kami.',
             'rating' => 4.83,
             'category_id' => 1,
+            'admin_id' => 1,
             'start_from' => 150000,
             'email' => 'ebisee@gmail.com',
             'whatsapp_number' => '+62-889-9823-6445',
@@ -39,6 +40,7 @@ class serviceproviderSeeder extends Seeder
             and international as well as multinational companies.',
             'rating' => 4.88,
             'category_id' => 3,
+            'admin_id' => 2,
             'start_from' => 500000,
             'email' => 'digitally@gmail.com',
             'whatsapp_number' => '+62-828-8473-7612',
@@ -54,6 +56,7 @@ class serviceproviderSeeder extends Seeder
             and strategy. We curate a distinctive blend of creative inisghts that aims to make a
             lasting impression',
             'category_id' => 3,
+            'admin_id' => 3,
             'rating' => 4.93,
             'start_from' => 250000,
             'email' => 'reka@gmail.com',
@@ -68,6 +71,7 @@ class serviceproviderSeeder extends Seeder
             '"PRODUCT & FASHION PHOTOGRAPHY:
             Layanan produksi terpadu yang mencakup berbagai kebutuhan kreatif dalam satu paket lengkap, mulai dari pencarian dan pengelolaan talenta profesional (model, fotografer, hingga kreator visual), penataan dan styling produk secara estetik dan presisi, layanan makeup artist (MUA) berpengalaman untuk memastikan setiap tampilan sesuai konsep, hingga pembuatan video berkualitas tinggi yang mendukung visual branding secara optimal."',
             'category_id' => 3,
+            'admin_id' => 4,
             'rating' => 4.85,
             'start_from' => 100000,
             'email' => 'jasafotoprodukjkt@gmail.com',
@@ -81,6 +85,7 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             'Sudah berdiri dan berkarya sejak tahun 2015 dan telah berhasil membuat project – project dengan kepuasan pelanggan baik dari dalam negeri hingga mancanegara.',
             'category_id' => 4,
+            'admin_id' => 5,
             'rating' => 4.9,
             'start_from' => 300000,
             'email' => 'jasaanimasi@gmail.com',
@@ -95,9 +100,10 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             'Dibawah naungan PT.Satria Karya Vikrama Sudah lebih dari 867+ klien di seluruh Indonesia telah mempercayai untuk menggunakan jasa Digital Promo. Karena kami membantu semua pengusaha yang tidak punya pengalaman, tidak mempunyai skil, dan tidak mempunyai waktu untuk membuat desain tertentu. Anda cukup bersantai , dan biarkan kami yang merangkai.',
             'category_id' => 4,
+            'admin_id' => 6,
             'rating' => 4.87,
             'start_from' => 400000,
-            'email' => 'jasavideoanimasii@gmail.com',
+            'email' => 'dipro@gmail.com',
             'whatsapp_number' => '+62 812-3123-5588',
             'link_porto' => 'https://youtu.be/QMuIXeam5_M',
             'link_photo' => '/Services/dipro.jpg',
@@ -109,6 +115,7 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             '"Sebagai Food Photographer & Videographer profesional di Jakarta, kami menawarkan layanan lengkap mulai dari pemotretan dan pembuatan video berkualitas tinggi hingga desain buku menu yang menarik, dengan fokus pada setiap detail untuk meningkatkan daya tarik visual dan mendukung branding bisnis kuliner Anda."',
             'category_id' => 3,
+            'admin_id' => 7,
             'rating' => 4.89,
             'start_from' => 500000,
             'email' => 'jasafotojakarta@gmail.com',
@@ -123,6 +130,7 @@ class serviceproviderSeeder extends Seeder
             'short_description' => 
             'Fokus membantu toko jadi brand lewat foto produk berkualitas. Mulai dari 90rb!🔥#TOKOJADIBRAND.',
             'category_id' => 3,
+            'admin_id' => 8,
             'rating' => 4.94,
             'start_from' => 90000,
             'email' => 'foto.laku@gmail.com',
@@ -138,6 +146,7 @@ class serviceproviderSeeder extends Seeder
             'Jasa Pembuatan Video 3D, Campaign, CGI, dan TVC:
             Kami menyediakan berbagai layanan video kreatif, mulai dari animasi 3D, video campaign, dan efek CGI hingga TVC (Television Commercial). Kami juga ahli dalam pembuatan konten singkat seperti short video, reels Instagram, dan TikTok untuk meningkatkan engagement dan memperkuat branding Anda di berbagai platform digital.',
             'category_id' => 1,
+            'admin_id' => 9,
             'rating' => 4.95,
             'start_from' => 250000,
             'email' => 'videoproduk@gmail.com',

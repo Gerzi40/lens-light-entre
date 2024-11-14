@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('short_description');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('admin_id')->constrained('admins')->onDelete('cascade');
             $table->decimal('rating', 3, 2)->default(0.0);
             $table->bigInteger('start_from');
             $table->string('email')->unique();

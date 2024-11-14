@@ -1,12 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ServicesListController;
 use App\Http\Controllers\ServiceDetailsController;
-use App\Http\Controllers\TransactionController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -15,6 +18,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+//ini customer
 Route::middleware('auth')->group(function(){
 
     Route::get('/servicesList', [ServicesListController::class, 'view'])->name('servicesList');
@@ -45,6 +49,14 @@ Route::middleware('auth')->group(function(){
     
 });
 
+// ini admin
+Route::middleware(['auth:admin'])->group(function(){
+    Route::get('/adminhome', [AdminHomeController::class, 'index'])->name('adminHome');
+    Route::get('/profile', function(){ return view('profile');})->name('profilePage');
+});
+
+
+// ini guest
 Route::get('/aboutus', function(){ return view('aboutus');})->name('aboutUs');
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');

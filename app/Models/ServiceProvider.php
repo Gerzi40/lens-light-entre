@@ -24,4 +24,7 @@ class ServiceProvider extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
 }

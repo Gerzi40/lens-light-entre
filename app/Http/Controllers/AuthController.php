@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
@@ -48,9 +49,29 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if(Auth::attempt($credentials)){
-            return redirect()->route('home');
-        } 
+        // if(Auth::attempt($credentials)){
+        //     return redirect()->route('home');
+        // } 
+
+        $userData = User::where('email', '=', $credentials['email'])->first();
+
+            if (!$userData) {
+                $userData = Admin::where('email', '=', $credentials['email'])->first();
+
+                if (!$userData || !Hash::check($credentials['password'], $userData['password']) ) {
+                    return redirect()->back()->with('fail', 'Email atau password salah');
+                }
+                
+                Auth::guard('admin')->login($userData);
+                return redirect()->route('adminHome');
+            } else {
+                if (!Hash::check($credentials['password'], $userData['password'])) {
+                    return redirect()->back()->with('fail', 'Email atau password salah');
+                }
+
+                Auth::login($userData);
+                return redirect()->route('home');
+            }
         
         return redirect()->back()->with('fail', 'Email atau password salah');
         
