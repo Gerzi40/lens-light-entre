@@ -18,18 +18,34 @@ class AuthController extends Controller
 
     public function registerUser(Request $request){
 
-        // $request->validate([
-        //     'username' => 'required|min:3|max:50',
-        //     'email' => 'required|regex:/^\S+@\S+\.\S+$/',
-        //     'password' => 'required|min:8',
-        //     'dob' => 'required|date',
-        // ]);
+        $request->validate([
+            'username' => 'required|min:3|max:50',
+            'email' => 'required|regex:/^\S+@\S+\.\S+$/',
+            'password' => 'required|min:8|confirmed',
+            'dob' => 'required|date',
+        ], [
+            'username.required' => 'The username is required.',
+            'username.min' => 'The username must be at least 3 characters.',
+            'username.max' => 'The username may not be greater than 50 characters.',
+    
+            'email.required' => 'The email address is required.',
+            'email.email' => 'Please provide a valid email address.',
+            'email.unique' => 'This email is already registered. Please use a different one.',
+    
+            'password.required' => 'A password is required.',
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.confirmed' => 'The password confirmation does not match.',
+    
+            'dob.required' => 'The date of birth is required.',
+            'dob.date' => 'Please provide a valid date of birth.',
+        ]);
 
         $user = new User();
         $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->dob = $request->dob;
+        
         if($user->save()){
             return redirect(route('login'))->with('success', 'User Created');
         }
@@ -72,10 +88,6 @@ class AuthController extends Controller
                 Auth::login($userData);
                 return redirect()->route('home');
             }
-        
-        return redirect()->back()->with('fail', 'Email atau password salah');
-        
-
     }
 
     public function logout(Request $request)

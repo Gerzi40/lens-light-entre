@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function(){
 
     Route::POST('/bookingHistory/{transaction_id}', [TransactionController::class, 'updateRating'])->name('updateRating');
 
-    Route::post('/updateProfile', [ProfileController::class, 'updateUser'])->name('updateuser');
+    Route::post('/profile', [ProfileController::class, 'updateUser'])->name('updateUser');
 
     Route::view('/payment', 'payment')->name('PaymentPage');
     
@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function(){
 // ini admin
 Route::middleware(['auth:admin'])->group(function(){
     Route::get('/adminhome', [AdminHomeController::class, 'index'])->name('adminHome');
-    Route::get('/profile', function(){ return view('profile');})->name('profilePage');
+    // Route::get('/profile', function(){ return view('profile');})->name('profilePage');
 });
 
 

@@ -17,14 +17,18 @@
         <div class="bg-white border rounded-lg p-10 w-full h-4/5 max-w-md">
           <h2 class="text-4xl font-semibold text-gray-800 mb-6 text-center">Login</h2>
           @if (session()->has('success'))
-            <div class="alert alert-success">
-                {{session()->get('success')}}
-            </div>
+          <div class="alert alert-success flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
+              <div class="text-sm font-medium">
+                {{session()->get('fail')}}
+              </div>
+          </div>
           @endif
           @if (session()->has('fail'))
-            <div class="alert alert-success">
+          <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+              <div class="text-sm font-medium">
                 {{session()->get('fail')}}
-            </div>
+              </div>
+          </div>
           @endif
           <form action="{{ route('login.submit') }}" method="POST" class="gap-y-10">
             @csrf
@@ -32,9 +36,7 @@
               <label for="email" class="block text-sm font-bold text-gray-700">Email</label>
               <input type="text" id="email" name="email" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
               @if ($errors->has('email'))
-              <span class="text-danger">
-                  {{$errors->first('email')}}
-              </span>
+                <p class="text-red-800">{{$errors->first('email')}}</p>
               @endif
             </div>
   
@@ -42,9 +44,7 @@
               <label for="password" class="block text-sm font-bold text-gray-700">Password</label>
               <input type="password" id="password" name="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
               @if ($errors->has('password'))
-                  <span class="text-danger">
-                      {{$errors->first('password')}}
-                  </span>
+                <p class="text-red-800">{{$errors->first('password')}}</p>
               @endif
             </div>
   

@@ -14,34 +14,49 @@
         <img src="{{ asset('Assets/SignUpBG.png') }}" class="object-cover" alt="SignUp Background">
       </div>
       <div class="w-full lg:w-1/2 flex items-center justify-center bg-white">
-        <div class="bg-white border rounded-lg p-10 w-full max-w-md">
+        <div class="bg-white border rounded-lg py-3 px-10 w-full max-w-md">
           <h2 class="text-4xl font-semibold text-gray-800 mb-6 text-center">Register</h2>
           
           <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
             @csrf
             <div>
               <label for="username" class="block text-sm font-bold text-gray-700">Username</label>
-              <input type="text" id="username" name="username" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              <input type="text" id="username" name="username" value="{{ old('username') }}" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              @error('username')
+                <p class="text-red-800">{{ $message }}</p>
+              @enderror
             </div>
 
             <div>
               <label for="email" class="block text-sm font-bold text-gray-700">Email</label>
-              <input type="email" id="email" name="email" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              <input type="email" id="email" name="email" value="{{ old('email') }}" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              @error('email')
+                <p class="text-red-800">{{ $message }}</p>
+              @enderror
             </div>
 
             <div>
               <label for="password" class="block text-sm font-bold text-gray-700">Password</label>
               <input type="password" id="password" name="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              @error('password')
+                <p class="text-red-800">{{ $message }}</p>
+              @enderror
             </div>
 
             <div>
               <label for="confirm_password" class="block text-sm font-bold text-gray-700">Confirm Password</label>
               <input type="password" id="confirm_password" name="password_confirmation" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              @error('password_confirmation')
+                <p class="text-red-800">{{ $message }}</p>
+              @enderror
             </div>
           
             <div>
               <label for="dob" class="block text-sm font-bold text-gray-700">DOB</label>
               <input type="date" id="dob" name="dob" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+              @error('dob')
+              <p class="text-red-800">{{ $message }}</p>
+              @enderror
             </div>
 
             <p class="text-sm text-gray-600 mt-4">
