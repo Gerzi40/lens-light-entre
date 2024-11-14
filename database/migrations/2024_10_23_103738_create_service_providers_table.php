@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('start_from');
             $table->string('email')->unique();
             $table->string('whatsapp_number');
+            $table->integer('rate_count')->default(0);
             $table->string('link_porto');
             $table->string('link_photo');
             $table->timestamps();

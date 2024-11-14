@@ -50,9 +50,15 @@
                                 <td class="px-6 py-4">
                                     Rp {{ number_format($transaction->price, 2, ',', '.') }}
                                 </td>
+                                @if ($transaction->israted === 0)
                                 <td class="px-6 py-4">
                                     <a href="/bookingHistory/{{$transaction->id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Rate</a>
                                 </td>
+                                @else
+                                <td class="px-6 py-4">
+                                    Rated
+                                </td>
+                                @endif
                             </tr>
                         @endforeach
                     @endif

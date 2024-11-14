@@ -46,32 +46,55 @@ class TransactionController extends Controller
 
     public function updateRating(Request $request, $transaction_id){
 
+        // 
+
+        // $transaction = Transaction::findOrFail($transaction_id);
+        // $serviceProvider = ServiceProvider::findorfail($transaction->service_provider_id);
+        
+        // $currentRating = $serviceProvider->rating;
+
+        // // pengen itung udah brp kali transaksi pernah dilakukan dengan service tersebut
+        
+        //  $previousRatingsCount = Transaction::where('service_provider_id', $serviceProvider->id)
+        //  ->whereNotNull('rating')  
+        //  ->count();
+
+        //  $newRating = $request->input('stars');
+
+        //  if ($previousRatingsCount > 0) {
+        //     $newAverageRating = (($currentRating * $previousRatingsCount) + $newRating) / ($previousRatingsCount + 1);
+        // } else {
+        //     $newAverageRating = $newRating;
+        // }
+
+        // $serviceProvider->rating = $newAverageRating;
+        // $serviceProvider->ratings_count = $previousRatingsCount + 1; 
+        // $serviceProvider->save();
+
         $request->validate([
             'stars' => 'required|integer|between:1,5',
         ]);
 
+        $input = $request->input('stars');
         $transaction = Transaction::findOrFail($transaction_id);
         $serviceProvider = ServiceProvider::findorfail($transaction->service_provider_id);
-        
         $currentRating = $serviceProvider->rating;
+        $rateCount = $serviceProvider->rate_count;
 
-        // pengen itung udah brp kali transaksi pernah dilakukan dengan service tersebut
+        $newRating = ($input + ($currentRating * $rateCount)) / ($rateCount + 1);
         
-         $previousRatingsCount = Transaction::where('service_provider_id', $serviceProvider->id)
-         ->whereNotNull('rating')  
-         ->count();
 
-         $newRating = $request->input('stars');
-
-         if ($previousRatingsCount > 0) {
-            $newAverageRating = (($currentRating * $previousRatingsCount) + $newRating) / ($previousRatingsCount + 1);
-        } else {
-            $newAverageRating = $newRating;
-        }
-
-        $serviceProvider->rating = $newAverageRating;
-        $serviceProvider->ratings_count = $previousRatingsCount + 1; 
+        // yang bakal kita save
+        // rate count baru
+        $serviceProvider->rate_count = $rateCount + 1; 
+        // rating baru
+        $serviceProvider->rating = $newRating;
         $serviceProvider->save();
+
+        // tandain bahwa transaksi udah di rate
+        $transaction->israted = 1;
+        $transaction->save();
+
 
 
         return redirect()->route('bookingHistory')->with('success', 'Rating updated successfully!');

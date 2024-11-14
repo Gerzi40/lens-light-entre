@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesListController;
 use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\TransactionController;
@@ -37,6 +38,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/bookingHistory/{id}', [TransactionController::class, 'idAtRating'])->name('RatingPage');
 
     Route::POST('/bookingHistory/{transaction_id}', [TransactionController::class, 'updateRating'])->name('updateRating');
+
+    Route::post('/updateProfile', [ProfileController::class, 'updateUser'])->name('updateuser');
 
     Route::view('/payment', 'payment')->name('PaymentPage');
     
