@@ -55,8 +55,12 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::get('/adminhome', [AdminContoller::class, 'index'])->name('adminHome');
     Route::get('/adminbookings',[AdminContoller::class, 'showBooking'])->name('adminBooking');
 
+    Route::get('/admin/addPackage', [AdminContoller::class, 'showAddPackage'])->name('adminAddPackage');
+    Route::post('/admin/addPackage', [AdminContoller::class, 'createNewPackage'])->name('adminStorePackage');
     // bikin di bawah ini yang edit update dll
-
+    Route::get('/admin/updatePackage/{id}', [AdminContoller::class, 'showUpdatePackage'])->name('showAdminUpdatePackage');
+    Route::post('/admin/updatePackage/{id}', [AdminContoller::class, 'updatePackage'])->name('adminUpdatePackage');
+    Route::delete('/admin/deletePackage/{id}', [AdminContoller::class, 'destroy'])->name('adminDeletePackage');
     // Route::get('/profile', function(){ return view('profile');})->name('profilePage');
 });
 

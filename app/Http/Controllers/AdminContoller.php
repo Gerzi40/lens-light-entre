@@ -38,26 +38,67 @@ class AdminContoller extends Controller
         $status = Status::all();
         return view('Admin.adminBookings', compact('transactions', 'status'));
     }
-
-    // update current package
-    public function updatePackage(string $id)
+    
+    public function showAddPackage()
     {
-        //
+        $serviceProviders = ServiceProvider::all(); 
+        return view('Admin.adminAddPackage',compact('serviceProviders'));
     }
 
     // bikin package tambahan
-    public function createNewPackage()
+    public function createNewPackage(Request $request)
     {
-        //
+        $admin = Auth::user();
+        $serviceProvider = $admin->serviceProvider;
+        
+        Package::create([
+            'service_provider_id' => $serviceProvider->id,
+            'packageName' => $request->input('packageName'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'duration' => $request->input('duration'),
+            'revisions' => $request->input('revisions'),
+        ]);
+        
+        return redirect()->route('adminHome')->with('success', 'Package added successfully!');
+    }
+    
+    // update current package
+    public function showUpdatePackage($id)
+    {
+        $package = Package::findOrFail($id);
+        $serviceProvider = Auth::user()->serviceProvider;
+
+        return view('admin.adminUpdatePackage', compact('package'));
+    }
+    public function updatePackage(Request $request, $id)
+    {
+        $request->validate([
+            'packageName' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'duration' => 'required|string',
+            'revisions' => 'required|integer|min:0',
+        ]);
+    
+        $package = Package::findOrFail($id);
+
+        $package->update([
+            'packageName' => $request->input('packageName'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'duration' => $request->input('duration'),
+            'revisions' => $request->input('revisions'),
+        ]);
+    
+        return redirect()->route('adminHome')->with('success', 'Package updated successfully!');
     }
 
-    public function update(Request $request, string $id)
+    public function destroy($id)
     {
-        //
-    }
+        $package = Package::findOrFail($id);
+        $package->delete();
 
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('adminHome')->with('success', 'Package deleted successfully!');
     }
 }

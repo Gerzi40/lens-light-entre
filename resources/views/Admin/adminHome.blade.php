@@ -23,12 +23,18 @@
                     </span>
                   </p>
                   <p class="mt-6 text-base leading-7 text-gray-300">{{$package->description}}</p>
-                  
               </div>  
               <div>
                 <h2 class="mt-2 text-lg text-slate-200">Working Duration  : {{$package->duration}}</h2>
                 <h3 class="mt-2 text-lg text-slate-200">Revision : {{$package->revisions}}</h3>
-                <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-[#2caaaa] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Edit Package</a>
+                <a href="{{ route('showAdminUpdatePackage', $package->id) }}" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-[#2caaaa] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Edit Package</a>
+                <form action="{{ route('adminDeletePackage', $package->id) }}" method="POST" class="mt-4 w-full">
+                  @csrf
+                  @method('DELETE') 
+                  <button type="submit" class="mt-8 block rounded-md bg-[#2caaaa] px-3.5 py-2.5 w-full text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">
+                      Delete Package
+                  </button>
+                </form>
               </div>
             </div>
             @endforeach
