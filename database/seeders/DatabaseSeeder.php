@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             serviceproviderSeeder::class,
             packageSeeder::class,
             StatusSeeder::class,
+            ChatSeeder::class
         ]);
     }
 }
