@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->date('dob');
             $table->string('profile_picture')->default('default.jpg');
+            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
