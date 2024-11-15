@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function(){
 Route::middleware(['auth:admin'])->group(function(){
     Route::get('/adminhome', [AdminContoller::class, 'index'])->name('adminHome');
     Route::get('/adminbookings',[AdminContoller::class, 'showBooking'])->name('adminBooking');
+    Route::get('/adminbookings/{transaction_id}', [AdminContoller::class, 'selectStatus'])->name('selectStatus');
 
     Route::get('/admin/addPackage', [AdminContoller::class, 'showAddPackage'])->name('adminAddPackage');
     Route::post('/admin/addPackage', [AdminContoller::class, 'createNewPackage'])->name('adminStorePackage');

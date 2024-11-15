@@ -35,8 +35,22 @@ class AdminContoller extends Controller
         $admin = Auth::user();
         $service = ServiceProvider::findorfail($admin->id);
         $transactions = Transaction::with('ServiceProvider', 'package')->where('service_provider_id', $service->id)->get();
-        $status = Status::all();
-        return view('Admin.adminBookings', compact('transactions', 'status'));
+        $statuses = Status::all();
+        return view('Admin.adminBookings', compact('transactions', 'statuses'));
+    }
+
+    public function selectStatus(Request $request, $transaction_id){
+        $statusSelection = $request->query('status');
+        $transaction = Transaction::findorfail($transaction_id);
+        $transaction->status_id = $statusSelection;
+        $transaction->save();
+
+        // ini buat data yg ditampilin lagi
+        $admin = Auth::user();
+        $service = ServiceProvider::findorfail($admin->id);
+        $transactions = Transaction::with('ServiceProvider', 'package')->where('service_provider_id', $service->id)->get();
+        $statuses = Status::all();
+        return view('Admin.adminBookings', compact('transactions', 'statuses'));
     }
     
     public function showAddPackage()

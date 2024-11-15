@@ -47,17 +47,19 @@
                                     Rp {{ number_format($transaction->price, 2, ',', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{-- {{ $transaction->status->name}} --}}
-                                    {{-- <form action="">
-                                        <select onchange="document.getElementById('form').submit()" name="category" style="border: none;" class="bg-gray-50" style="border-radius: 4px">
+                                    <form action="/adminbookings/{{$transaction->id}}" method="GET" class="" id="form" >
+                                        <select onchange="document.getElementById('form').submit()" name="status" style="border: none;" class="bg-gray-50" style="border-radius: 4px">
                                             <option value="">
-                                                All categories
+                                                {{$transaction->status->name}}
                                             </option>
-                                            @foreach ($categories as $category)  
-                                                    <option value="{{$category->id}}" {{ request('category') == $category->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2">{{$category->name}}</button>
+                                            @foreach ($statuses as $status)  
+                                                    @if ($transaction->status->name != $status->name)  
+                                                    <option value="{{$status->id}}" {{ request('status') == $status->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2">{{$status->name}}</button>
+                                                    @else  
+                                                    @endif
                                             @endforeach
                                         </select>
-                                    </form> --}}
+                                    </form>
                                 </td>
                                 @if ($transaction->rating != 0)
                                 <td class="px-6 py-4">
