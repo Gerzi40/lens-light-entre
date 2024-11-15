@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminContoller;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
@@ -51,7 +52,11 @@ Route::middleware('auth')->group(function(){
 
 // ini admin
 Route::middleware(['auth:admin'])->group(function(){
-    Route::get('/adminhome', [AdminHomeController::class, 'index'])->name('adminHome');
+    Route::get('/adminhome', [AdminContoller::class, 'index'])->name('adminHome');
+    Route::get('/adminbookings',[AdminContoller::class, 'showBooking'])->name('adminBooking');
+
+    // bikin di bawah ini yang edit update dll
+
     // Route::get('/profile', function(){ return view('profile');})->name('profilePage');
 });
 

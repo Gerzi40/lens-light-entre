@@ -19,6 +19,7 @@ class TransactionController extends Controller
         $transaction->user_id = $user->id;
         $transaction->service_provider_id = $package->service_provider_id;
         $transaction->package_id = $package->id;
+        $transaction->status_id = 1;
         $transaction->price = $package->price;
         $transaction->payment_type = $request->payment_type; 
         $transaction->transaction_date = now();
@@ -91,7 +92,8 @@ class TransactionController extends Controller
         $serviceProvider->rating = $newRating;
         $serviceProvider->save();
 
-        // tandain bahwa transaksi udah di rate
+        // tandain bahwa transaksi udah di rate dan jumlah ratingnya
+        $transaction->rating = $input;
         $transaction->israted = 1;
         $transaction->save();
 

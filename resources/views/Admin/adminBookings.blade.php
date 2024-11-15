@@ -1,5 +1,4 @@
 <x-layout>
-
     <section class="pt-24 pb-20 px-24 h-screen">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -13,9 +12,6 @@
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Package
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Company
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Price
@@ -48,21 +44,28 @@
                                     {{$transaction->package->packageName}} 
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{$transaction->serviceProvider->name}}
-                                </td>
-                                <td class="px-6 py-4">
                                     Rp {{ number_format($transaction->price, 2, ',', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{$transaction->status->name}}
+                                    {{-- {{ $transaction->status->name}} --}}
+                                    {{-- <form action="">
+                                        <select onchange="document.getElementById('form').submit()" name="category" style="border: none;" class="bg-gray-50" style="border-radius: 4px">
+                                            <option value="">
+                                                All categories
+                                            </option>
+                                            @foreach ($categories as $category)  
+                                                    <option value="{{$category->id}}" {{ request('category') == $category->id ? 'selected' : '' }} class="inline-flex w-full px-4 py-2">{{$category->name}}</button>
+                                            @endforeach
+                                        </select>
+                                    </form> --}}
                                 </td>
-                                @if ($transaction->israted === 0)
+                                @if ($transaction->rating != 0)
                                 <td class="px-6 py-4">
-                                    <a href="/bookingHistory/{{$transaction->id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Rate</a>
+                                    ⭐{{$transaction->rating}}
                                 </td>
                                 @else
                                 <td class="px-6 py-4">
-                                    Rated
+                                    Not Rated yet!
                                 </td>
                                 @endif
                             </tr>
@@ -72,4 +75,4 @@
             </table>
         </div>
     </section>
-    </x-layout>
+</x-layout>

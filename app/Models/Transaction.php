@@ -27,4 +27,8 @@ class Transaction extends Model
     {
         return $this->belongsTo(ServiceProvider::class, 'service_provider_id');
     }
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id');
+    }
 }
