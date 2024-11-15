@@ -1,7 +1,8 @@
+
     <div>
         @foreach ($chatRooms as $CR)
-        <a href="/chatDetail/{{$CR->id}}">
-            {{ $CR->admin->username }}
+        <a href="/adminChatDetail/{{$CR->id}}">
+            {{$CR->user->username}}
             <br>
         </a>
         @endforeach

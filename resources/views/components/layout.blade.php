@@ -7,6 +7,8 @@
     <title>Document</title>
     {{-- @vite('resources/css/app.css') --}}
     @vite(['resources/css/app.css','resources/js/app.js'])
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body class="scroll-smooth">
     <x-header></x-header>

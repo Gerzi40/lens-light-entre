@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ServicesListController;
 use App\Http\Controllers\ServiceDetailsController;
@@ -47,7 +48,10 @@ Route::middleware('auth')->group(function(){
     Route::post('/profile', [ProfileController::class, 'updateUser'])->name('updateUser');
 
     Route::view('/payment', 'payment')->name('PaymentPage');
-    
+
+    Route::get('/chat', [ChatController::class, 'getAdmin'])->name('getAdmin');
+    Route::get('/chatDetail/{cr_id}', [ChatController::class, 'userChat'])->name('chatDetail');
+    Route::post('/insertMessage', [ChatController::class, 'insertChat'])->name('insertChat');
 });
 
 // ini admin
@@ -63,6 +67,10 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::post('/admin/updatePackage/{id}', [AdminContoller::class, 'updatePackage'])->name('adminUpdatePackage');
     Route::delete('/admin/deletePackage/{id}', [AdminContoller::class, 'destroy'])->name('adminDeletePackage');
     // Route::get('/profile', function(){ return view('profile');})->name('profilePage');
+
+    Route::get('/adminChat', [ChatController::class, 'getUser'])->name('getUser');
+    Route::get('/adminChatDetail/{cr_id}', [ChatController::class, 'adminChat'])->name('adminChatDetail');
+    Route::post('/adminInsertMessage', [ChatController::class, 'adminInsertChat'])->name('adminInsertChat');
 });
 
 

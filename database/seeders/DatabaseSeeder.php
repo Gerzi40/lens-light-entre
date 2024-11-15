@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ChatRoom;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             serviceproviderSeeder::class,
             packageSeeder::class,
             StatusSeeder::class,
+            ChatRoomSeeder::class,
             ChatSeeder::class
         ]);
     }

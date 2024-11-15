@@ -47,4 +47,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function chatrooms(){
+        return $this->hasMany(ChatRoom::class);
+    }
 }

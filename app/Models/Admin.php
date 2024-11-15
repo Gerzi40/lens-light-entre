@@ -23,4 +23,7 @@ class Admin extends Model implements AuthenticatableContract
     public function serviceProvider(){
         return $this->hasOne(ServiceProvider::class);
     }
+    public function chatrooms(){
+        return $this->hasMany(ChatRoom::class);
+    }
 }

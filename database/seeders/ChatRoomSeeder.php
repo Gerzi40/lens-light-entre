@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Chat;
+use App\Models\ChatRoom;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ChatSeeder extends Seeder
+class ChatRoomSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,9 @@ class ChatSeeder extends Seeder
     public function run(): void
     {
         //
-        Chat::create([
-            'chat_room_id' => 1,
-            'message' => 'Halo, ada yang bisa saya bantu?',
-            'senderuser' => false,
+        ChatRoom::create([
+            'user_id' => 1,
+            'admin_id' => 1
         ]);
     }
 }
