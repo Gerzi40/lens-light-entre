@@ -9,10 +9,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
+    {{-- @include('components.header') --}}
     <div id="chat">
         @foreach ($chatRoom->chats as $chat)
            <li>
-                {{$chat->message}}
+            @if ($chat->senderuser == 1)
+                ini user yang send : {{$chat->message}}
+            @else
+            ini admin yang send : {{$chat->message}}
+            @endif
            </li>
         @endforeach
     </div>

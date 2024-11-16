@@ -18,5 +18,9 @@ class ChatRoomSeeder extends Seeder
             'user_id' => 1,
             'admin_id' => 1
         ]);
+        ChatRoom::create([
+            'user_id' => 1,
+            'admin_id' => 2
+        ]);
     }
 }

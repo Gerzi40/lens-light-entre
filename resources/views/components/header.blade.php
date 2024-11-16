@@ -21,6 +21,10 @@
             class="group text-black font-medium mx-5 transition-all duration-600 ease-in-out {{ $currentPage == 'aboutUs' ? 'active' : '' }}"><span class="bg-left-bottom bg-gradient-to-r from-black to-black {{ $currentPage == 'aboutUs' ? 'bg-[length:100%_2px]' : 'bg-[length:0%_2px]' }} bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out pb-[2px]">About Us</span>
             </a>
 
+            <a href="{{ route('customerChat') }}" 
+            class="group text-black font-medium mx-5 transition-all duration-600 ease-in-out {{ $currentPage == 'customerChat' ? 'active' : '' }}"><span class="bg-left-bottom bg-gradient-to-r from-black to-black {{ $currentPage == 'customerChat' ? 'bg-[length:100%_2px]' : 'bg-[length:0%_2px]' }} bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out pb-[2px]">Chat</span>
+            </a>
+
             <form action="{{ route('logout') }}" method="POST" class="mx-5">
                 @csrf
                 <button>Logout</button>

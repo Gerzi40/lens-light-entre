@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function(){
 
     Route::view('/payment', 'payment')->name('PaymentPage');
 
-    Route::get('/chat', [ChatController::class, 'getAdmin'])->name('getAdmin');
+    Route::get('/chat', [ChatController::class, 'getAdmin'])->name('customerChat');
     Route::get('/chatDetail/{cr_id}', [ChatController::class, 'userChat'])->name('chatDetail');
     Route::post('/insertMessage', [ChatController::class, 'insertChat'])->name('insertChat');
 });
