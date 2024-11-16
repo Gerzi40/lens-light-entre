@@ -15,16 +15,15 @@ class ChatController extends Controller
     public function getUser(){
         // login as ebisee id = 1
         $admin = Auth::user();
-        //$transactions = Transaction::where('service_provider_id', $admin->id)->get();
-        // dari transaction kita bisa liat ada user siapa aja
-        $chatRooms = ChatRoom::where('user_id', $admin->id)->get();
+        $chatRooms = ChatRoom::where('admin_id', $admin->id)->get();
         return view('Admin.adminChat', compact('chatRooms'));
     }
 
     // ambil admin untuk user
     public function getAdmin(){
+        // login as garry ada 2 transaksi
         $user = Auth::user();
-        $chatRooms = ChatRoom::where('admin_id', $user->id)->get();
+        $chatRooms = ChatRoom::where('user_id', $user->id)->get();
         return view('chat', compact('chatRooms'));
     }
 
