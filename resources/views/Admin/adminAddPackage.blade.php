@@ -50,7 +50,7 @@
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-[#65668B] hover:bg-[#7981A2] rounded-lg focus:ring-4 focus:ring-[#7981A2]">
+                <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-[#2caaaa] hover:bg-[#187777] rounded-lg focus:ring-4 focus:ring-[#103a3a]">
                     Add Package
                 </button>
             </form>

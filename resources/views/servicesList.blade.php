@@ -35,10 +35,10 @@
 
                 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
                     @foreach ($lists as $service)
-                    <div class="group relative">
+                    <div class="group relative border p-2">
                         <div class=" w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-50">
                             {{-- Ini masukin gambar --}}
-                            <img src={{$service->link_photo}} alt="Front of men&#039;s Basic Tee in black."
+                            <img src={{$service->link_photo}} alt=""
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="flex flex-col justify-between">

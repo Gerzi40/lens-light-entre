@@ -93,7 +93,7 @@
             </div>
         </div>
     </section>
-    <section class="pt-36 pb-32 px-20">
+    <section class="pb-32 px-20">
         <div class="flex">
             <div class="w-1/3">
                 <img src="/Assets/cameras-removebg-preview1.png" alt="">

@@ -64,6 +64,14 @@ class AdminContoller extends Controller
     {
         $admin = Auth::user();
         $serviceProvider = $admin->serviceProvider;
+
+        $request->validate([
+            'packageName' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'duration' => 'required|string',
+            'revisions' => 'required|integer|min:0',
+        ]);
         
         Package::create([
             'service_provider_id' => $serviceProvider->id,
@@ -113,6 +121,6 @@ class AdminContoller extends Controller
         $package = Package::findOrFail($id);
         $package->delete();
 
-        return redirect()->route('adminHome')->with('success', 'Package deleted successfully!');
+        return redirect()->route('adminHome')->with('fail', 'Package deleted successfully!');
     }
 }
