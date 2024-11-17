@@ -19,5 +19,10 @@ class ChatSeeder extends Seeder
             'message' => 'Halo, ada yang bisa saya bantu?',
             'senderuser' => false,
         ]);
+        Chat::create([
+            'chat_room_id' => 2,
+            'message' => 'Halo, ada yang bisa saya bantu?',
+            'senderuser' => false,
+        ]);
     }
 }

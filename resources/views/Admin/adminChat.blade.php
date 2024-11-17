@@ -1,9 +1,41 @@
-
-    <div>
-        @foreach ($chatRooms as $CR)
-        <a href="/adminChatDetail/{{$CR->id}}">
-            {{$CR->user->username}}
-            <br>
-        </a>
-        @endforeach
+<x-layout>
+    <div class="pt-36">
+        <div class="w-auto bg-white border-r border-gray-300">
+            <!-- Sidebar Header -->
+            <header class="p-4 border-b border-gray-300 flex justify-between items-center bg-indigo-600 text-white">
+              <h1 class="text-2xl font-semibold">Customer</h1>
+              <div class="relative">
+                <button id="menuButton" class="focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path d="M2 10a2 2 0 012-2h12a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z" />
+                  </svg>
+                </button>
+                <!-- Menu Dropdown -->
+              </div>
+            </header>
+          
+            <!-- Contact List -->
+            <div>
+                @foreach ($chatRooms as $CR)
+                <a href="/adminChatDetail/{{$CR->id}}">
+                    <div class="mb-1 px-3 ">
+                    <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                        <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" class="w-12 h-12 rounded-full">
+                        </div>
+                        <div class="flex-1">
+                        <h2 class="text-lg font-semibold">{{ $CR->user->username }}</h2>
+                        <p class="text-gray-600">{{optional($CR->chats->last())->message ?? 'No message available'}}</p>
+                        </div>
+                    </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+          </div>
+        </div>
+        
+        
     </div>
+</x-layout>

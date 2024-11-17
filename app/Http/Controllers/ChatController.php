@@ -24,6 +24,7 @@ class ChatController extends Controller
         // login as garry ada 2 transaksi
         $user = Auth::user();
         $chatRooms = ChatRoom::where('user_id', $user->id)->get();
+        // chat ke 10
         return view('chat', compact('chatRooms'));
     }
 
