@@ -30,7 +30,7 @@
             <h3 class="text-4xl font-base">get along with hundreds of services ready to work!</h3>
         </div>
         <div class="flex mb-12">
-            <img src="/Assets/tess.png" alt="" class="">
+            <img src="/Assets/tess.png" alt="" class="w-auto">
         </div>
         <div class="flex flex-wrap">
             <div class="w-full px-4b lg:w-8/12 ">
@@ -80,7 +80,7 @@
                     <div class="flex gap-5 justify-center">
                         <img src="/Assets/adobeLr1.png" alt="">
                         <img src="/Assets/adobePs1.png" alt="" class="">
-                        <img src="/Assets/canva1.png" alt="" class="object-cover">
+                        <img src="/Assets/canva1.png" alt="" class="" style="width: 92px">
                         <button
                             class="py-6 px-20 bg-[#D9D9D9] rounded-xl ml-5 text-xl font-semibold">AND<br>MORE</button>
                     </div>
@@ -120,6 +120,14 @@
     <section class="pt-36 pb-32 px-20 bg-[#EFEFE9]">
         <div class="flex justify-center items-center">
             <img src="/Assets/groupapalah.png" alt="">
+        </div>
+        <div class="flex justify-center items-center mr-5 mt-10">
+            <a href="/login">
+                <button
+                    class="py-6 px-20 bg-[#223030] text-slate-100 font-medium items-center rounded-lg ml-5 shadow-xl hover:bg-white hover:text-[#223030] transition duration-300 ease-in-out">
+                    JOIN US NOW
+                </button>
+            </a>
         </div>
     </section>
 </x-layout>
