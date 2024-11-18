@@ -47,9 +47,9 @@
             </div>
         </div>
     </div>
-    <div class="fixed bottom-0 left-0 right-0 mx-16">
+    <div class="fixed bottom-0 left-0 right-0 mx-16 bg-slate-800">
         <input type="text" class="w-11/12" id="message">
-        <button id="send" class="text-center w-auto">send</button>
+        <button id="send" class="text-center text-white ml-1">send</button>
     </div>
 
     <script>

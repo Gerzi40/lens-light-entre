@@ -41,7 +41,7 @@
         </div>
         @endif
       </div>
-      <div class="mx-auto mb-12 mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-7xl lg:grid-cols-3">
+      <div class="mx-auto mb-12 mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 lg:max-w-7xl lg:grid-cols-3">
           @forelse ($packages as $package)
           <div class="flex flex-col justify-between mx-5 h-full rounded-3xl bg-[#223030] p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
             <div>

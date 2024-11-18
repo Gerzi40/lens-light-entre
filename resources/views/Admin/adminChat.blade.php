@@ -1,8 +1,8 @@
 <x-layout>
-    <div class="pt-36">
+    <div class="pt-36 pb-56">
         <div class="w-auto bg-white border-r border-gray-300">
             <!-- Sidebar Header -->
-            <header class="p-4 border-b border-gray-300 flex justify-between items-center bg-indigo-600 text-white">
+            <header class="p-4 border-b border-gray-300 flex justify-between items-center bg-white text-slate-900">
               <h1 class="text-2xl font-semibold">Customer</h1>
               <div class="relative">
                 <button id="menuButton" class="focus:outline-none">
