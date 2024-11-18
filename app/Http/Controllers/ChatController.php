@@ -15,7 +15,7 @@ class ChatController extends Controller
     public function getUser(){
         // login as ebisee id = 1
         $admin = Auth::user();
-        $chatRooms = ChatRoom::where('admin_id', $admin->id)->get();
+        $chatRooms = ChatRoom::with('service_providers')->where('admin_id', $admin->id)->get();
         return view('Admin.adminChat', compact('chatRooms'));
     }
 
