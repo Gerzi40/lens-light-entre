@@ -14,15 +14,20 @@ class ChatSeeder extends Seeder
     public function run(): void
     {
         //
+        date_default_timezone_set('Asia/Jakarta');
         Chat::create([
             'chat_room_id' => 1,
             'message' => 'Halo, ada yang bisa saya bantu?',
             'senderuser' => false,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
         Chat::create([
             'chat_room_id' => 2,
             'message' => 'Halo, ada yang bisa saya bantu?',
             'senderuser' => false,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }

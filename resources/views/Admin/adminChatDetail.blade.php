@@ -25,7 +25,7 @@
                                     <div class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3">
                                         <p class="text-slate-700">{{ $chat->message }}</p>
                                     </div>
-                                    {{-- <p>{{$chat->created_at->format('H:i')}}</p> --}}
+                                    <p>{{$chat->created_at->format('H:i')}}</p>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                                     <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
                                         <p class="text-slate-700">{{ $chat->message }}</p>
                                     </div>
-                                    {{-- <p>{{$chat->created_at->format('H:i')}}</p> --}}
+                                    <p>{{$chat->created_at->format('H:i')}}</p>
                                 </div>
                             </div>
                         </div>
@@ -64,6 +64,7 @@
                                 <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
                                     <p class="text-slate-700">${data.chat.message}</p>
                                 </div>
+                                <p>${getCurrentWIBTime()}</p>
                             </div>
                         </div>`)
         });
@@ -88,7 +89,8 @@
                             <div class="flex justify-end mb-4 cursor-pointer">
                                 <div class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3">
                                     <p class="text-slate-700">${document.getElementById('message').value}</p>
-                                </div>
+                                    </div>
+                                <p>${getCurrentWIBTime()}</p>
                             </div>
                         </div>`)
                     document.getElementById('message').value = ""
@@ -98,6 +100,23 @@
                 }
             })
         })
+        function getCurrentWIBTime() {
+            const now = new Date();
+            // Calculate UTC time
+            const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
+            // Add 7 hours for WIB (UTC+7)
+            const wibTime = new Date(utcTime + 7 * 3600000);
+            
+            // Format the time in 'YYYY-MM-DD HH:mm:ss' format
+            const year = wibTime.getFullYear();
+            const month = String(wibTime.getMonth() + 1).padStart(2, '0');
+            const day = String(wibTime.getDate()).padStart(2, '0');
+            const hours = String(wibTime.getHours()).padStart(2, '0');
+            const minutes = String(wibTime.getMinutes()).padStart(2, '0');
+            const seconds = String(wibTime.getSeconds()).padStart(2, '0');
+            
+            return `${hours}:${minutes}`;
+        }
     
     </script>
 </body>

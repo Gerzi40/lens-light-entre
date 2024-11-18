@@ -15,7 +15,7 @@ class ChatController extends Controller
     public function getUser(){
         // login as ebisee id = 1
         $admin = Auth::user();
-        $chatRooms = ChatRoom::with('service_providers')->where('admin_id', $admin->id)->get();
+        $chatRooms = ChatRoom::where('admin_id', $admin->id)->get();
         return view('Admin.adminChat', compact('chatRooms'));
     }
 
@@ -43,6 +43,9 @@ class ChatController extends Controller
         $chat->message = $req->message;
         $chat->chat_room_id = $req->chat_room_id;
         $chat->senderuser = $req->senderuser;
+        date_default_timezone_set('Asia/Jakarta');
+        $chat->created_at = date('Y-m-d H:i:s');
+        $chat->updated_at = date('Y-m-d H:i:s');
         $chat->save();
 
         broadcast(new ChatEvent($chat))->toOthers();
@@ -53,6 +56,9 @@ class ChatController extends Controller
         $chat->message = $req->message;
         $chat->chat_room_id = $req->chat_room_id;
         $chat->senderuser = $req->senderuser;
+        date_default_timezone_set('Asia/Jakarta');
+        $chat->created_at = date('Y-m-d H:i:s');
+        $chat->updated_at = date('Y-m-d H:i:s');
         $chat->save();
 
         broadcast(new ChatEvent($chat))->toOthers();
